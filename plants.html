@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Tropical Plants – Dwaipayan’s Greenhouse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A peek at my ever-growing collection of tropical houseplants – Monsteras, Philodendrons, Anthuriums and more." />
+
+  <!-- Fonts shared with the main site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#1f4e79;
+      --cta:#000;
+      --ctb:#566063;
+      --bg:#d6dee6;
+      --text:#111;
+      --sans:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+      --serif:'Merriweather',Georgia,serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:var(--sans);font-size:1.1rem;line-height:1.7;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
+
+    /* header */
+    header{background:#fff;border-bottom:1px solid #e0e0e0;}
+    nav{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;}
+    nav a{color:var(--cta);text-decoration:none;font-weight:600;}
+    nav a:hover{color:var(--accent);}    
+
+    /* typography */
+    h1{font-family:var(--serif);font-size:clamp(2.1rem,4.5vw,3rem);margin:2rem 0 1rem;text-align:center;color:var(--accent);}  
+    p.lead{max-width:55ch;margin:0 auto 2rem;text-align:center;}
+
+    /* grid */
+    .grid{max-width:960px;margin:0 auto 2.5rem;padding:0 1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;}
+    .tile{background:#fff;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);cursor:zoom-in;transition:transform .35s ease,box-shadow .35s ease;}
+    .tile:hover{transform:translateY(-2px);box-shadow:0 3px 8px rgba(0,0,0,.08);}  
+    .tile img{width:100%;height:auto;display:block;object-fit:cover;background:#fafafa;transition:transform .35s ease;min-height:200px;}
+    .tile:hover img{transform:scale(1.08);}  
+    .tile div{padding:.9rem 1rem;font-size:.9rem;}
+    .tile strong{display:block;margin-bottom:.35rem;font-weight:600;}
+
+    /* footer */
+    footer{text-align:center;padding:2rem 1rem;font-size:.9rem;color:#555;border-top:1px solid #e0e0e0;}
+
+    /* lightbox */
+    #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.83);display:flex;align-items:center;justify-content:center;z-index:1000;}
+    #lightbox[hidden]{display:none;}
+    #lightbox img{max-width:90vw;max-height:90vh;box-shadow:0 4px 20px rgba(0,0,0,.5);} 
+    #lb-close{position:absolute;top:1rem;right:1.3rem;font:700 2rem/1 sans-serif;color:#fff;cursor:pointer;user-select:none;}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="./index.html" aria-label="Back to homepage">← Home</a>
+      <span>My Tropical Plant Collection</span>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Inside the Greenhouse</h1>
+    <p class="lead">From velvety Anthuriums to variegated Monsteras, these are a few favourites I care for when I’m not modelling massive stars.</p>
+
+    <section class="grid">
+      <!-- 2. Monstera Thai Constellation -->
+      <div class="tile">
+        <img src="./assets/img/plants/thai_constellation.jpg" alt="Monstera Thai Constellation with creamy variegation" />
+        <div>
+          <strong>Monstera <em>‘Thai Constellation’</em></strong>
+          Cream-marbled leaves splattered with stars—slow to grow but worth the wait.
+        </div>
+      </div>
+      <!-- 4. Philodendron Splendid -->
+      <div class="tile">
+        <img src="./assets/img/plants/splendid.jpg" alt="Philodendron Splendid showing velvety heart-shaped leaves" />
+        <div>
+          <strong>Philodendron <em>‘Splendid’</em></strong>
+          A velvety hybrid (verrucosum × melanochrysum) with lime-green veining that lives up to its name.
+        </div>
+      </div>
+      <!-- 5. Alocasia Frydek -->
+      <div class="tile">
+        <img src="./assets/img/plants/frydek.jpg" alt="Alocasia Frydek verigated" />
+        <div>
+          <strong>Alocasia micholitziana <em>‘Frydek’</em> verigated </strong>
+          Velvet-textured foliage; thrives with warmth, humidity, and bright shade.
+        </div>
+      </div>
+      <!-- 6. Alocasia macrorrhizos Aurea -->
+      <div class="tile">
+        <img src="./assets/img/plants/alocasia_aurea.jpg" alt="Alocasia macrorrhizos Aurea with chartreuse leaves" />
+        <div>
+          <strong>Alocasia macrorrhizos <em>‘Aurea’</em></strong>
+          Neon-chartreuse elephant-ear; needs plenty of sun and nutrients to keep glowing.
+        </div>
+      </div>
+      <!-- 7. Anthurium pallidiflorum -->
+      <div class="tile">
+        <img src="./assets/img/plants/pallidiflorum.jpg" alt="Long strappy leaves of Anthurium pallidiflorum hanging" />
+        <div>
+          <strong>Anthurium pallidiflorum</strong>
+          Pendant, narrow leaves can reach a metre long—loves humidity above 70 %.
+        </div>
+      </div>
+      <!-- 8. Queen Anthurium -->
+      <div class="tile">
+        <img src="./assets/img/plants/queen_anthurium.jpg" alt="Anthurium warocqueanum with elongated velvety leaves" />
+        <div>
+          <strong>Anthurium warocqueanum</strong>
+          The fabled “Queen” with velvety dark leaves and silver midrib—temperamental but majestic.
+        </div>
+      </div>
+      <!-- 10. Syngonium Mojito -->
+      <div class="tile">
+        <img src="./assets/img/plants/syngonium_mojito.jpg" alt="Syngonium Mojito with mottled variegation" />
+        <div>
+          <strong>Syngonium <em>‘Mojito’</em></strong>
+          Speckled lime-and-green foliage; unfussy and fast-growing—great for propagation swaps.
+        </div>
+      </div>
+      <!-- 11. Begonia maculata -->
+      <div class="tile">
+        <img src="./assets/img/plants/begonia_maculata.jpg" alt="Begonia maculata with silver polka-dot leaves" />
+        <div>
+          <strong>Begonia maculata</strong>
+          Polka-dotted leaves and red undersides; appreciates bright shade and even moisture.
+        </div>
+      </div>
+      <!-- 12. Aglaonema pictum Tricolor -->
+      <div class="tile">
+        <img src="./assets/img/plants/aglaonema_tricolor.jpg" alt="Aglaonema pictum tricolor camouflage-pattern leaves" />
+        <div>
+          <strong>Aglaonema pictum <em>‘Tricolor’</em></strong>
+          Camouflage-patterned leaves in three shades of green—slow but striking.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 Dwaipayan Debnath · Built with GPT O3 &amp; GitHub Pages · Last updated: 2 July 2025</footer>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox" hidden>
+    <span id="lb-close">&times;</span>
+    <img id="lb-img" alt="zoomed plant image" />
+  </div>
+
+  <script>
+    // Lightbox logic
+    const lb=document.getElementById('lightbox');
+    const lbImg=document.getElementById('lb-img');
+    const closeLb=()=>{lb.hidden=true;lbImg.src='';};
+    document.querySelectorAll('.tile img').forEach(img=>{
+      img.addEventListener('click',()=>{lbImg.src=img.src;lb.hidden=false;});
+    });
+    document.getElementById('lb-close').addEventListener('click',closeLb);
+    lb.addEventListener('click',e=>{if(e.target.id==='lightbox')closeLb();});
+  </script>
+</body>
+</html>

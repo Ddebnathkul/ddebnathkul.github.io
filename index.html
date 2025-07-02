@@ -5,35 +5,85 @@
   <title>Dwaipayan Debnath – Astrophysicist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Dwaipayan Debnath | PhD candidate in massive–star atmospheres & winds" />
-  <style>
-    :root { --accent:#1f4e79; --bg:#fdfdfd; --text:#111; }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{font:400 1rem/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--text);background:var(--bg);}    
-    a{color:var(--accent);text-decoration:none;} a:hover{opacity:.85;}
-    header{position:sticky;top:0;z-index:999;background:rgba(253,253,253,.9);backdrop-filter:blur(6px);border-bottom:1px solid #e0e0e0;}
-    nav{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;}
-    nav a{margin-left:1.2rem;font-weight:600;color:var(--text);} nav a.active{color:var(--accent);} 
-    .hero{max-width:960px;margin:3rem auto 2.5rem;padding:0 1rem;display:flex;flex-wrap:wrap;gap:2rem;align-items:center;justify-content:center;}
-    .headshot{width:160px;height:160px;border-radius:50%;object-fit:cover;box-shadow:0 2px 6px rgba(0,0,0,.15);}    
-    .hero h1{font-size:clamp(2rem,4.5vw,3rem);} .hero p{font-size:1.1rem;color:#444;margin-top:.4rem;}
-    .cta{margin-top:1.4rem;} .cta a{display:inline-block;padding:.6rem 1.4rem;border-radius:4px;background:var(--accent);color:#fff;font-weight:600;}
-    section.tab-section{display:none;max-width:960px;margin:3rem auto;padding:0 1rem;}
-    section.tab-section.active{display:block;}
-    section h2{font-size:1.6rem;margin-bottom:.8rem;color:var(--accent);} 
-    ul{list-style:disc;margin-left:1.2rem;margin-top:.6rem;} li{margin-bottom:.4rem;}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;}
-    .tile{background:#fff;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06);position:relative;cursor:zoom-in;} 
-    .tile img{width:100%;height:auto;display:block;object-fit:contain;background:#fafafa;transition:transform .35s ease;} 
-    .tile:hover img{transform:scale(1.12);} 
-    .tile div{padding:.8rem 1rem;font-size:.9rem;} .tile strong{display:block;margin-bottom:.3rem;}
-    footer{text-align:center;padding:2rem 1rem;font-size:.9rem;color:#666;border-top:1px solid #e0e0e0;}
-    @media(max-width:640px){nav a{margin-left:.8rem;} .hero{flex-direction:column;text-align:center;}}
 
-    /* === Lightbox === */
-    #lightbox {position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;z-index:1000;}
-    #lightbox[hidden] {display:none;}
-    #lightbox img {max-width:90vw;max-height:90vh;box-shadow:0 4px 20px rgba(0,0,0,.5);} 
-    #lb-close {position:absolute;top:1rem;right:1.2rem;font:700 2rem/1 sans-serif;color:#fff;cursor:pointer;user-select:none;}
+  <!-- ———  Web‑fonts  ——— -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+   :root{
+     /* colour palette */
+     --accent:#1f4e79;   /* deep blue – links & headings */
+     --cta:   #000;      /* used for active nav */
+     --ctb:   #566063;   /* buttons */
+     --bg:    #d6dee6;   /* global background */
+     --text:  #111;
+
+     /* typography */
+     --sans:  'Inter',system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+     --serif: 'Merriweather',Georgia,serif;
+   }
+
+   /* ——— CSS reset ——— */
+   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+   html{scroll-behavior:smooth;}
+
+   body{
+     font-family:var(--sans);
+     font-size:1.125rem;          /* ≈18 px base for comfortable reading */
+     line-height:1.75;            /* generous leading */
+     color:var(--text);
+     background:var(--bg);
+     -webkit-font-smoothing:antialiased;
+   }
+
+   p{margin-bottom:1.25rem;}
+   ul{list-style:disc;margin-left:1.4rem;margin-bottom:1.25rem;}
+   li{margin-bottom:.5rem;}
+
+   h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.2;color:var(--accent);}   
+
+   /* navigation */
+   header{position:sticky;top:0;z-index:999;background:rgba(253,253,253,.9);backdrop-filter:blur(6px);border-bottom:1px solid #e0e0e0;}
+   nav{max-width:960px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;padding:.9rem 1rem;}
+   nav a{margin-left:1.4rem;font-weight:600;color:var(--cta);text-decoration:none;}
+   nav a.active{color:var(--accent);}  
+   @media(max-width:640px){nav a{margin-left:.9rem;font-size:.95rem;}}
+
+   /* hero */
+   .hero{max-width:960px;margin:0 auto 2.75rem;padding:5rem 1rem 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.25rem;position:relative;isolation:isolate;}
+   .hero::before{content:'';position:absolute;inset:0;z-index:-1;background:url("./assets/img/Pleiades_large.jpg") center/cover no-repeat;background-blend-mode:overlay;background-color:rgba(31,78,121,.4);filter:blur(1px);transform:scale(1.05);}  
+   .headshot{width:170px;height:170px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.15);}  
+   .hero h1{font-size:clamp(2.4rem,5vw,3.4rem);color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.25);}  
+   .hero p{font-size:1.125rem;color:#e6e6e6;text-shadow:0 1px 3px rgba(0,0,0,.25);}  
+   .cta{margin-top:1.6rem;}
+   .cta a{display:inline-block;text-decoration:none;padding:.65rem 1.5rem;border-radius:4px;background:var(--ctb);color:#fff;font-weight:600;transition:background .25s ease;}
+   .cta a:hover{background:#424a4d;}
+
+   /* tab sections */
+   section.tab-section{display:none;max-width:960px;margin:3rem auto;padding:0 1rem;}
+   section.tab-section.active{display:block;}
+   section h2{font-size:1.7rem;margin-bottom:1rem;}  
+
+   /* image grid */
+   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;}
+   .tile{background:#fff;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);cursor:zoom-in;transition:transform .35s ease,box-shadow .35s ease;}
+   .tile:hover{transform:translateY(-2px);box-shadow:0 3px 8px rgba(0,0,0,.08);} 
+   .tile img{width:100%;height:auto;display:block;object-fit:contain;background:#fafafa;transition:transform .35s ease;}
+   .tile:hover img{transform:scale(1.12);}  
+   .tile div{padding:.9rem 1rem;font-size:.9rem;}
+   .tile strong{display:block;margin-bottom:.35rem;font-weight:600;}
+
+   /* lightbox */
+   #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;z-index:1000;}
+   #lightbox[hidden]{display:none;}
+   #lightbox img{max-width:90vw;max-height:90vh;box-shadow:0 4px 20px rgba(0,0,0,.5);} 
+   #lb-close{position:absolute;top:1rem;right:1.2rem;font:700 2rem/1 sans-serif;color:#fff;cursor:pointer;user-select:none;}
+
+   /* footer */
+   footer{text-align:center;padding:2.2rem 1rem;font-size:.95rem;color:#555;border-top:1px solid #e0e0e0;}
   </style>
 </head>
 <body>
@@ -55,37 +105,39 @@
     <div>
       <h1>Dwaipayan Debnath</h1>
       <p>PhD Candidate · Institute of Astronomy, KU Leuven</p>
-      <div class="cta"><a href="/cv.html">Download CV (PDF)</a></div>
+      <div class="cta"><a href="./cv.html">Download CV (PDF)</a></div>
     </div>
   </section>
 
   <section id="about" class="tab-section active">
     <h2>About</h2>
-      <p>I am a PhD student in the <a href="https://fys.kuleuven.be/ster/research-projects/equation-folder/equation-home" target="_blank">EQUATION group</a> of Prof.&nbsp;Jon&nbsp;Sundqvist at the Institute of Astronomy (KU&nbsp;Leuven). My work combines cutting‑edge 2D/3D radiation‑hydrodynamic simulations in an unified approach starting deep within the subsonic regions to the line‑driven outflow for hot, massive stars.</p>
-    <p> Our new unified atmosphere‑and‑wind models are the first to self‑consistently bridge the photosphere and supersonic outflow while incorporating NLTE line opacity. They reveal that </p>
-      <strong>(1)</strong> Structure starts appearing deep within the subsonic regions, originating from the iron-opacity-bump, </p>
-      <strong>(2)</strong> The atmosphere becomes highly turbulent, spectra created with our RHD models can replicate the extra-broadening observed in photospheric lines of such stars; there by turbulence emerges as a natural explanation for the ad-hoc macro-turbulence used in 1D spectral synthesis codes to fit observed spectra , and </p>
-      <strong>(3)</strong> Turbulent pressure can increase the pressure scale height around the photosphere, and there by changes the log g determination and can explain the long-standing mass-discrepancy problem.</p>
-    <p>I also co‑develop <em>LIME</em>—an on‑the‑fly mass‑loss estimator that uses modified CAK theory and line-statistics parameters to calculate the mass loss rate of a star with custom stellar parameters and chemical compositions.</p>
+    <p>I am a PhD student in the <a href="https://fys.kuleuven.be/ster/research-projects/equation-folder/equation-home" target="_blank">EQUATION group</a> of Prof.&nbsp;Jon&nbsp;Sundqvist at the Institute of Astronomy (KU&nbsp;Leuven). My work combines cutting‑edge 2D/3D radiation‑hydrodynamic simulations using MPI-AMRVAC in a unified approach, starting deep within the sub‑sonic regions and extending all the way upto the line‑driven wind region in hot and luminous, massive stars.</p>
+    <p>Our new unified atmosphere‑and‑wind models are the first to self‑consistently bridge the photosphere and supersonic outflow. They reveal that:</p>
+    <ul>
+      <li><strong>(1)</strong> Structure starts appearing deep within the sub‑sonic regions, originating from the iron‑opacity bump.</li>
+      <li><strong>(2)</strong> The atmosphere becomes highly turbulent; spectra computed from our RHD models can reproduce the extra broadening observed in photospheric lines of O‑type stars, making turbulence a natural explanation for the ad‑hoc “macro‑turbulence” used in 1‑D synthesis codes.</li>
+      <li><strong>(3)</strong> Turbulent pressure inflates the pressure‑scale height around the photosphere, altering inferred log g values and helping solve the long‑standing mass‑discrepancy problem.</li>
+    </ul>
+    <p>I also co‑develop <em>LIME</em> — an on‑the‑fly mass‑loss estimator that couples modified CAK theory with line‑statistics parameters to predict mass‑loss rates for stars of arbitrary chemical composition.</p>
+    <p> When I’m not simulating stellar winds, I cultivate an ever-expanding collection of tropical plants—see the full greenhouse on the <a href="./plants.html">plants page</a>.</p>  
   </section>
 
   <section id="research" class="tab-section">
     <h2>Research</h2>
     <ul>
-      <li>Massive-star atmospheres &amp; winds</li>
-      <li>Radiative transfer &amp; multi-D RHD</li>
+      <li>Massive‑star atmospheres &amp; winds</li>
+      <li>Radiative transfer &amp; multi‑D RHD</li>
       <li>Stellar evolution &amp; feedback</li>
       <li>Computational astrophysics</li>
     </ul>
     <h3 style="margin-top:2rem;">Current Projects</h3>
     <ul>
-      <li><strong>2D/3D Unified Atmosphere &amp; Wind Simulations</strong> – Developing time-dependent multi-D models of O-type stars incorporating NLTE line opacity.</li>
-      <li><strong>LIME – On-the-fly Mass-Loss Estimator</strong> – A Python/Fortran workflow that couples line-driven wind theory with atmosphere grids.</li>
+      <li><strong>2D/3D Unified Atmosphere &amp; Wind Simulations</strong> – Developing time‑dependent multi‑D models of O‑type stars incorporating NLTE line opacity.</li>
+      <li><strong>LIME – On‑the‑fly Mass‑Loss Estimator</strong> – A Python/Fortran workflow that couples line‑driven wind theory with atmosphere grids.</li>
     </ul>
   </section>
 
-  
-   <section id="highlights" class="tab-section">
+  <section id="highlights" class="tab-section">
     <h2>Simulation Highlights</h2>
     <div class="grid">
       <div class="tile">
@@ -94,13 +146,13 @@
       </div>
       <div class="tile">
         <img src="./assets/img/Ostar_surface.gif" alt="Surface gif" />
-        <div><strong> </strong> </div>
+        <div><strong>Surface Dynamics GIF</strong></div>
       </div>
       <div class="tile">
         <img src="./assets/img/lime_comparison.png" alt="LIME vs other prescriptions" />
         <div>
-          <strong>LIME vs. Other Ṁ Prescriptions</strong>Side-by-side comparison of mass-loss rates from <em>LIME</em>, Vink +01, Björklund +21, and Krtička +24.<br />
-          <a href="https://lime.ster.kuleuven.be/" target="_blank" style="font-weight:600;text-decoration:none;color:inherit;">Visit LIME website →</a>
+          <strong>LIME vs. Other Ṁ Prescriptions</strong>Side‑by‑side comparison of mass‑loss rates from <em>LIME</em>, Vink +01, Björklund +21, and Krtička +24.<br />
+          <a href="https://lime.ster.kuleuven.be/" target="_blank" style="font-weight:600;text-decoration:none;color:inherit;">Visit LIME website →</a>
         </div>
       </div>
     </div>
@@ -108,25 +160,20 @@
 
   <section id="publications" class="tab-section">
     <h2>Publications</h2>
-    <h3>Peer-Reviewed Articles</h3>
+    <h3>Peer‑Reviewed Articles</h3>
     <ul>
-      <li><strong>Debnath D.</strong>, Sundqvist J.O., Moens N. <em>et al.</em> 2024. <em>2D unified atmosphere and wind simulations of O-type stars</em>. <em>A&amp;A</em> 684.</li>
-      <li>Ud-Doula A., Sundqvist J.O., Narechania N., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>Suppression of photospheric velocity fluctuations in strongly magnetic O stars in radiation-magnetohydrodynamic simulations
-</em> <em>A&amp;A</em>.</li>
-      <li>Van der Sijpt C., Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>Structure formation in O-type stars and Wolf-Rayet stars</em> <em>A&amp;A</em>.</li>
-      <li>González-Torà G., Sander A.A.C., Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>Improving 1D stellar atmosphere models with insights from multi-dimensional simulations: I. 1D versus 2D stratifications and spectral comparisons for O stars
-</em> <em>A&amp;A</em>.</li>
-      <li>Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>An on-the-fly line-driven-wind iterative mass-loss estimator (LIME) for hot, massive stars of arbitrary chemical compositions
-</em>. <em>A&amp;A</em>.</li>
-      <li>González-Torà G., Sander A.A.C., Moens N., Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>Improving 1D stellar atmosphere models with insights from multi-dimensional simulations II. 1D versus 3D hydrodynamically consistent model comparison for WR stars
-</em>. <em>A&amp;A</em>.</li>
+      <li><strong>Debnath D.</strong>, Sundqvist J.O., Moens N. <em>et al.</em> 2024. <em>2D unified atmosphere and wind simulations of O‑type stars</em>. <em>A&amp;A</em> 684.</li>
+      <li>Ud‑Doula A., Sundqvist J.O., Narechania N., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>Suppression of photospheric velocity fluctuations in strongly magnetic O stars in radiation‑magnetohydrodynamic simulations</em>. <em>A&amp;A</em>.</li>
+      <li>Van der Sijpt C., Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>Structure formation in O‑type stars and Wolf‑Rayet stars</em>. <em>A&amp;A</em>.</li>
+      <li>González‑Torà G., Sander A.A.C., Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>Improving 1D stellar atmosphere models with insights from multi‑dimensional simulations: I. 1D versus 2D stratifications and spectral comparisons for O stars</em>. <em>A&amp;A</em>.</li>
+      <li>Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>An on‑the‑fly line‑driven‑wind iterative mass‑loss estimator (LIME) for hot, massive stars of arbitrary chemical compositions</em>. <em>A&amp;A</em>.</li>
+      <li>González‑Torà G., Sander A.A.C., Moens N., Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>Improving 1D stellar atmosphere models with insights from multi‑dimensional simulations II. 1D versus 3D hydrodynamically consistent model comparison for WR stars</em>. <em>A&amp;A</em>.</li>
     </ul>
-    <h3>Manuscripts in Prep / Submitted</h3>
+    <h3>Manuscripts in Prep / Submitted</h3>
     <ul>
-      <li>Moens N., <strong>Debnath D.</strong> <em>et al.</em> <em>Atmospheric parameters from a grid of 2D O-star simulations</em>. In prep.</li>
-      <li><strong>Debnath D.</strong>, Sundqvist J.O., Moens N. <em>Multi-D NLTE unified model atmospheres with winds</em>. In prep.</li>
-       <li>Delbroek L., Sundqvist J.O., <strong>Debnath D.</strong> <em> et al. <em> <em>Spectral synthesis of 3D unified model atmospheres with winds for
-O-stars</em>. In prep.</li>
+      <li>Moens N., <strong>Debnath D.</strong> <em>et al.</em> <em>Atmospheric parameters from a grid of 2D O‑star simulations</em>. In prep.</li>
+      <li><strong>Debnath D.</strong>, Sundqvist J.O., Moens N. <em>Multi‑D NLTE unified model atmospheres with winds</em>. In prep.</li>
+      <li>Delbroek L., Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> <em>Spectral synthesis of 3D unified model atmospheres with winds for O‑stars</em>. In prep.</li>
     </ul>
   </section>
 
@@ -135,16 +182,16 @@ O-stars</em>. In prep.</li>
     <p>Email: <a href="mailto:dwaipayan.debnath@kuleuven.be">dwaipayan.debnath@kuleuven.be</a><br/>Leuven, Belgium</p>
   </section>
 
-  <footer>© 2025 Dwaipayan Debnath · Built with GPT O3 and GitHub Pages · Last updated: 2 July 2025</footer>
+  <footer>© 2025 Dwaipayan Debnath · Built with GPT O3 &amp; GitHub Pages · Last updated: 2 July 2025</footer>
 
-  <!-- ―― Lightbox overlay ―-->
+  <!-- ——— Lightbox ——— -->
   <div id="lightbox" hidden>
     <span id="lb-close">&times;</span>
     <img id="lb-img" alt="">
   </div>
 
   <script>
-    // ---- Tab navigation ----
+    // ——— Tab navigation ———
     const links=document.querySelectorAll('nav a[data-tab]');
     const sections=document.querySelectorAll('section.tab-section');
     function activate(tab){
@@ -162,13 +209,13 @@ O-stars</em>. In prep.</li>
     const initial=location.hash.slice(1)||'about';
     if(initial!=='about'){activate(initial);}  
 
-    // ---- Lightbox ----
+    // ——— Lightbox ———
     const lb=document.getElementById('lightbox');
     const lbImg=document.getElementById('lb-img');
     const closeLb=()=>{lb.hidden=true;lbImg.src='';};
     document.querySelectorAll('.tile img').forEach(img=>{
       img.addEventListener('click',()=>{
-        lbImg.src=img.src; // change to high-res URL if available
+        lbImg.src=img.src; // change to high‑res URL if available
         lb.hidden=false;
       });
     });
