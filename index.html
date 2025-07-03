@@ -72,10 +72,17 @@
    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;}
    .tile{background:#fff;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);cursor:zoom-in;transition:transform .35s ease,box-shadow .35s ease;}
    .tile:hover{transform:translateY(-2px);box-shadow:0 3px 8px rgba(0,0,0,.08);} 
-   .tile img{width:100%;height:auto;display:block;object-fit:contain;background:#fafafa;transition:transform .35s ease;}
-   .tile:hover img{transform:scale(1.12);}  
    .tile div{padding:.9rem 1rem;font-size:.9rem;}
    .tile strong{display:block;margin-bottom:.35rem;font-weight:600;}
+
+  .tile:hover img{
+    transform:none;     /* reset */
+  }
+  
+  /* re-apply the effect, but only when the cursor is on the image */
+  .tile img:hover{
+    transform:scale(1.12);
+  }
 
    /* lightbox */
    #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;z-index:1000;}
@@ -93,11 +100,39 @@
      gap:1.75rem;                 /* a little breathing room        */
    }
    
-   #highlights .tile{
-     background:#f4f7fa;
-     border:1px solid rgba(0,0,0,.05);  /* optional softer border */
-     box-shadow:0 2px 6px rgba(0,0,0,.04); /* optional subtle shadow */
-   } 
+    /* —— “Book-style” highlight cards —— */
+    #highlights .tile{
+      display:block;              /* simple block again              */
+      padding:1rem 1.25rem;
+    }
+
+    #highlights .tile img{
+      float:right;
+      /*      ↓ bigger but still responsive                 */
+      width:clamp(300px, 55%, 420px);
+      /*         ^ min-width   ^ ideal %   ^ don’t exceed   */
+      height:auto;
+      margin:0 1.25rem 1rem 0;
+      border-radius:4px;
+      object-fit:cover;
+    }
+        
+    /* clear the float at the end of each tile so the next card starts below */
+    #highlights .tile::after{
+      content:"";
+      display:block;
+      clear:both;
+    }
+    
+    /* revert to stacked layout on small screens */
+    @media (max-width:640px){
+      #highlights .tile img{
+        float:none;
+        width:100%;
+        margin:0 0 .8rem;
+      }
+    }
+ 
 
    #highlights .tile div{
      font-size:clamp(1.25rem,0.8vw + 1.1rem,1.55rem); /* 18.9 → 22 px range            */
@@ -111,6 +146,30 @@
      line-height:1.35;
    }
    
+    #highlights .tile a{
+      color:var(--accent);          /* same blue as headings         */
+      font-weight:600;
+      text-decoration:none;         /* no underline                  */
+      display:inline-flex;          /* lets us animate the arrow     */
+      align-items:center;
+      gap:.25rem;                   /* space between text & arrow    */
+      transition:color .25s ease;
+      cursor:pointer;               /* classic pointer on hover      */
+    }
+    
+    /* subtle arrow wiggle on hover */
+    #highlights .tile a span{
+      transition:transform .25s ease;
+    }
+    
+    #highlights .tile a:hover{
+      color:#000;                   /* darken text on hover          */
+    }
+    
+    #highlights .tile a:hover span{
+      transform:translateX(3px);    /* nudge arrow right             */
+    }
+
     /* footer contact icons */
     footer .social{
       display:flex;
@@ -177,11 +236,11 @@
     <p>I am a PhD student in the <a href="https://fys.kuleuven.be/ster/research-projects/equation-folder/equation-home" target="_blank">EQUATION group</a> of Prof.&nbsp;Jon&nbsp;Sundqvist at the Institute of Astronomy (KU&nbsp;Leuven). My work combines cutting‑edge 2D/3D radiation‑hydrodynamic simulations using MPI-AMRVAC in a unified approach, starting deep within the sub‑sonic regions and extending all the way upto the line‑driven wind region in hot and luminous, massive stars.</p>
     <p>Our new unified atmosphere‑and‑wind models are the first to self‑consistently bridge the photosphere and supersonic outflow. They reveal that:</p>
     <ul>
-      <li><strong>(1)</strong> Structure starts appearing deep within the sub‑sonic regions, originating from the iron‑opacity bump.</li>
-      <li><strong>(2)</strong> The atmosphere becomes highly turbulent; spectra computed from our RHD models can reproduce the extra broadening observed in photospheric lines of O‑type stars, making turbulence a natural explanation for the ad‑hoc “macro‑turbulence” used in 1‑D synthesis codes.</li>
-      <li><strong>(3)</strong> Turbulent pressure inflates the pressure‑scale height around the photosphere, altering inferred log g values and helping solve the long‑standing mass‑discrepancy problem.</li>
+      <li> Structure starts appearing deep within the sub‑sonic regions, originating from the iron‑opacity bump.</li>
+      <li> The atmosphere becomes highly turbulent; spectra computed from our RHD models can reproduce the extra broadening observed in photospheric lines of O‑type stars, making turbulence a natural explanation for the ad‑hoc “macro‑turbulence” used in 1‑D synthesis codes.</li>
+      <li> Turbulent pressure inflates the pressure‑scale height around the photosphere, altering inferred log g values and helping solve the long‑standing mass‑discrepancy problem.</li>
     </ul>
-    <p>I also co‑develop <em>LIME</em> — an on‑the‑fly mass‑loss estimator that couples modified CAK theory with line‑statistics parameters to predict mass‑loss rates for stars of arbitrary chemical composition.</p>
+    <p>I also co‑develop <a href="https://lime.ster.kuleuven.be/" target="_blank" rel="noopener">LIME</a> — an on‑the‑fly mass‑loss estimator that couples modified CAK theory with line‑statistics parameters to predict mass‑loss rates for stars of arbitrary chemical composition.</p>
     <p> When I’m not simulating stellar winds, I cultivate an ever-expanding collection of tropical plants—see the full greenhouse on the <a href="./plants.html">plants page</a>.</p>  
   </section>
 
@@ -203,21 +262,22 @@
     <h2>Simulation Highlights</h2>
     <div class="grid">
       <div class="tile">
-        <img src="./assets/img/timeseries.png" alt="2D wind simulation" />
-        <div><strong>2D Wind Snapshot</strong> 
-        The figure shows the temporal evolution of our 
-        prototypical ‘O4’ simulation during the dynamically
+        <img src="./assets/img/timeseries.png" alt="Multi-D Atmosphere and Wind Dynamics" />
+        <div><strong>Multi-D Atmosphere and Wind Dynamics</strong> 
+        <p>The figure shows the temporal evolution of our 
+        prototypical 'O4' simulation (2D) during the dynamically
         relaxed phase. It shows how the Γ < 1 sub-Eddington
         layers close to the lower boundary have become quasi-stable,
         characterized by low variation in temperature and velocity; the
-        radial velocity dispersion is here about ∼ 1 km/s (see Fig. 10)
+        radial velocity dispersion is here about ∼ 1 km/s
         and the temperature dispersion is ∼ 1.5%. As the temperature
         then decreases outwards from about 450 kK at the lower boundary, 
-        the opacity increases and creates local super-Eddington re
-        gions (below the photosphere) with Γ > 1. The net result is a highly 
-        structured and turbulent sub-surface atmosphere characterized by 
+        the opacity increases and creates local super-Eddington regions 
+        (below the photosphere) with Γ > 1. </p>
+        
+        The net result is a highly structured and turbulent sub-surface atmosphere characterized by 
         temperature fluctuations, strong density contrasts, and large turbulent 
-        velocities that‘overshoot’ into the overlying cooler surface layers 
+        velocities that 'overshoot' into the overlying cooler surface layers 
         with lower opacities. The turbulent gas stemming from the deeper
         atmosphere naturally interacts with the line-driven layers around
         and above the photosphere. This complex interplay creates a situation 
@@ -230,13 +290,28 @@
       </div>
       <div class="tile">
         <img src="./assets/img/Ostar_surface.gif" alt="Surface gif" />
-        <div><strong>Surface Dynamics GIF</strong></div>
+        <div><strong>Variable surface</strong>
+        A lateral slice through our relaxed 3-D ‘O4’ simulation, taken near the optical photosphere (τ ≈ 2⁄3), 
+        reveals radiative-temperature fluctuations of roughly 20 000 K. If we could resolve an O-star’s surface, 
+        it would likely look very much like this — dynamic, and richly structured.
+        </div>
       </div>
       <div class="tile">
         <img src="./assets/img/lime_comparison.png" alt="LIME vs other prescriptions" />
         <div>
-          <strong>LIME vs. Other Ṁ Prescriptions</strong>Side‑by‑side comparison of mass‑loss rates from <em>LIME</em>, Vink +01, Björklund +21, and Krtička +24.<br />
-          <a href="https://lime.ster.kuleuven.be/" target="_blank" style="font-weight:600;text-decoration:none;color:inherit;">Visit LIME website →</a>
+          <strong>Line-driven-wind Iterative Mass-loss rate Estimator (LIME)</strong>
+
+          <p>Figure compares LIME predictions to mass-loss rates derived from observations of 84 OB-stars in the Milky way, LMC, and SMC. 
+          These empirical rates are derived in a homogeneous way: optical and ultraviolet observations of a multitude of strategic spectral lines are
+          fitted to synthetic spectra calculated by means of the model atmosphere and wind code fastwind (Puls et al. 2005; Sundqvist & Puls 2018), accounting for effects of wind clumping with arbitrary optical thickness, a non-void medium in between clumps,
+          and for porosity effects in velocity space. Observational data come from the ulysses and XshootU projects (Vink et al. 2023) and a genetic algorithm approach is used for each star to find a
+          global best fit to the data (Brands et al. 2022).</p>
+
+          <p>It shows an overall good agreement between our predicted rates and those empirically inferred from observations. When making 
+          the same comparisons also to the alternative mass-loss rate recipes from Vink et al. (2001); Björklund et al. (2023); Krtička et al. (2024), 
+          as displayed, the simple method presented here performs as good or even better.</p>
+
+          <a href="https://lime.ster.kuleuven.be/" target="_blank" rel="noopener">Visit LIME website</a>
         </div>
       </div>
     </div>
