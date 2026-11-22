@@ -1,169 +1,234 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Tropical Plants – Dwaipayan’s Greenhouse</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="A peek at my ever-growing collection of tropical houseplants – Monsteras, Philodendrons, Anthuriums and more." />
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inside the greenhouse · Dwaipayan Debnath</title><meta name="description" content="A collection of tropical plants, variegated aroids and Anthuriums."><link rel="canonical" href="https://ddebnathkul.github.io/plants.html"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/css/site.css"><script src="assets/js/site.js" defer></script>
+<style>
+.greenhouse-collection{padding-bottom:64px}
+.collection-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:10px 0 14px}
+.collection-heading h2{font-size:1.35rem;letter-spacing:-.025em}.collection-heading p{font-size:.82rem;color:var(--muted)}
+.plant-tabs{display:none;gap:7px;flex-wrap:wrap;margin:0 0 18px;padding:12px;background:var(--paper);border:1px solid var(--line);border-radius:13px}
+.greenhouse-collection.tabs-ready .plant-tabs{display:flex}
+.plant-tabs button{font-family:var(--sans);font-size:.86rem;font-weight:600;color:var(--ink);background:transparent;border:1px solid var(--line);padding:10px 14px;border-radius:7px;text-align:left;line-height:1.35}
+.plant-tabs button:hover{background:var(--secondary-soft,#dce5d5)}
+.plant-tabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.plant-profiles{display:grid;gap:20px;min-width:0}
+.plant-profile{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--paper);align-items:stretch;min-width:0}
+.plant-profile[hidden]{display:none}
+.plant-information{padding:34px 30px;min-width:0}
+.plant-count{font-size:.76rem;color:var(--muted);font-weight:650;letter-spacing:.11em;text-transform:uppercase}
+.plant-information h2{font-size:clamp(1.7rem,3.2vw,2.65rem);margin:12px 0 12px;line-height:1.14;overflow-wrap:anywhere}
+.plant-type{display:inline-block;background:var(--secondary-soft,#dce5d5);border:1px solid var(--line);border-radius:5px;padding:4px 9px;font-size:.77rem;font-weight:650;margin-bottom:15px}
+.plant-description{color:var(--muted);font-size:.97rem;margin-bottom:19px}
+.plant-facts{margin:0;border-top:1px solid var(--line)}
+.plant-facts>div{display:grid;grid-template-columns:112px minmax(0,1fr);gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.88rem;line-height:1.5}
+.plant-facts dt{font-weight:700;color:var(--ink)}.plant-facts dd{margin:0;color:var(--muted)}
+.plant-information h3{font-size:1.05rem;margin:23px 0 11px}
+.plant-climate{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 12px}
+.plant-climate>div{background:#e7ece3;padding:11px 13px;border-radius:7px;border:1px solid #d6dfd0}
+.plant-climate dt{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}.plant-climate dd{margin:4px 0 0;font-size:.93rem;font-weight:650;color:var(--ink)}
+.plant-care{border-top:1px solid var(--line)}
+.plant-photo{margin:0;background:#dce5d5;padding:22px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;min-width:0}
+.plant-photo .zoom-link{display:flex;align-items:center;justify-content:center;width:100%;min-width:0;overflow:hidden;border-radius:9px}
+.plant-photo img{width:100%;height:auto;max-height:640px;object-fit:contain;border-radius:9px}
+.plant-photo figcaption{font-size:.78rem;color:var(--muted);text-align:center}
+.plant-references{font-size:.77rem;color:var(--muted);margin-top:18px;line-height:1.7}.plant-references a{display:inline-block;margin-right:10px}
+.plant-note{font-size:.82rem;color:var(--muted);margin:16px 0 0;max-width:850px}
+@media(max-width:900px){.plant-information{padding:25px 22px}.plant-photo{padding:16px}.plant-facts>div{grid-template-columns:90px 1fr}}
+@media(max-width:720px){.greenhouse-collection{padding-bottom:44px}.plant-profile{grid-template-columns:1fr}.plant-information{padding:24px 19px}.plant-photo{padding:15px}.plant-photo img{max-height:520px}.plant-tabs{gap:6px;padding:9px}.plant-tabs button{font-size:.8rem;padding:8px 10px}.collection-heading{align-items:flex-start}.collection-heading h2{font-size:1.2rem}}
+@media print{.plant-tabs{display:none!important}.plant-profile[hidden]{display:grid}.plant-profile{break-inside:avoid}.plant-photo img{max-height:380px}}
 
-  <!-- Fonts shared with the main site -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+/* Greenhouse introduction; the existing plant profiles retain their styling. */
+.greenhouse-jump{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:20px;font-size:.87rem;font-weight:650}
+.greenhouse-intro{margin:8px 0 54px;display:grid;gap:20px}
+.greenhouse-love{background:var(--navy);color:#f5f6f1;border-radius:16px;padding:34px 36px;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,.85fr);gap:28px;align-items:center}
+.greenhouse-love .eyebrow{color:#bac8b1}.greenhouse-love h2{font-size:clamp(1.7rem,3vw,2.65rem);line-height:1.2;margin:12px 0 16px}.greenhouse-love p{font-size:.97rem;color:#e6e6e6;line-height:1.75}
+.greenhouse-love figure{margin:0;min-width:0}.greenhouse-love figure img{width:100%;height:285px;object-fit:cover;object-position:center;border-radius:9px}.greenhouse-love figcaption{font-size:.76rem;color:#d6e1cd;margin-top:8px;text-align:center}
+.greenhouse-care-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.greenhouse-intro-card{padding:26px 30px;background:var(--paper);border:1px solid var(--line);border-radius:14px;min-width:0}
+.greenhouse-intro-card h2{font-size:clamp(1.4rem,2.4vw,1.9rem);margin:12px 0 12px}.greenhouse-intro-card p{font-size:.94rem;color:var(--muted)}
+.greenhouse-intro-card ul{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--line)}.greenhouse-intro-card li{font-size:.88rem;color:var(--muted);display:grid;grid-template-columns:minmax(90px,.7fr) minmax(0,1.3fr);gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}.greenhouse-intro-card li strong{color:var(--ink)}
+.greenhouse-intro-card .mix-note{margin-top:14px;font-size:.84rem}.genus-groups{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;margin-top:20px}.genus-group{padding:18px;background:#e7ece3;border:1px solid #d6dfd0;border-radius:9px}.genus-group h3{font-size:.94rem;margin-bottom:10px}.genus-group p{font-size:.82rem;margin-bottom:12px}.genus-chips{display:flex;flex-wrap:wrap;gap:7px}.genus-chips span{display:inline-block;border:1px solid var(--line);background:var(--paper);border-radius:6px;padding:5px 9px;font-size:.86rem;color:var(--ink);font-style:italic}
+.greenhouse-collection{border-top:1px solid var(--line);padding-top:30px}.collection-heading h2{font-size:clamp(1.65rem,3vw,2.35rem)}.collection-heading{align-items:center}.favourites-intro{color:var(--muted);font-size:.94rem;margin-bottom:18px;max-width:780px}
+@media(max-width:720px){.greenhouse-love,.greenhouse-care-grid,.genus-groups{grid-template-columns:1fr;gap:16px}.greenhouse-love,.greenhouse-intro-card{padding:22px 19px}.greenhouse-love figure img{height:220px}.greenhouse-intro{margin-bottom:32px}.collection-heading{align-items:flex-start}.collection-heading p{white-space:nowrap}.greenhouse-intro-card li{grid-template-columns:100px minmax(0,1fr)}}
 
-  <style>
-    :root{
-      --accent:#1f4e79;
-      --cta:#000;
-      --ctb:#566063;
-      --bg:#d6dee6;
-      --text:#111;
-      --sans:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
-      --serif:'Merriweather',Georgia,serif;
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:var(--sans);font-size:1.1rem;line-height:1.7;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
-
-    /* header */
-    header{background:#fff;border-bottom:1px solid #e0e0e0;}
-    nav{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;}
-    nav a{color:var(--cta);text-decoration:none;font-weight:600;}
-    nav a:hover{color:var(--accent);}    
-
-    /* typography */
-    h1{font-family:var(--serif);font-size:clamp(2.1rem,4.5vw,3rem);margin:2rem 0 1rem;text-align:center;color:var(--accent);}  
-    p.lead{max-width:55ch;margin:0 auto 2rem;text-align:center;}
-
-    /* grid */
-    .grid{max-width:960px;margin:0 auto 2.5rem;padding:0 1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;}
-    .tile{background:#fff;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);cursor:zoom-in;transition:transform .35s ease,box-shadow .35s ease;}
-    .tile:hover{transform:translateY(-2px);box-shadow:0 3px 8px rgba(0,0,0,.08);}  
-    .tile img{width:100%;height:auto;display:block;object-fit:cover;background:#fafafa;transition:transform .35s ease;min-height:200px;}
-    .tile:hover img{transform:scale(1.08);}  
-    .tile div{padding:.9rem 1rem;font-size:.9rem;}
-    .tile strong{display:block;margin-bottom:.35rem;font-weight:600;}
-
-    /* footer */
-    footer{text-align:center;padding:2rem 1rem;font-size:.9rem;color:#555;border-top:1px solid #e0e0e0;}
-
-    /* lightbox */
-    #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.83);display:flex;align-items:center;justify-content:center;z-index:1000;}
-    #lightbox[hidden]{display:none;}
-    #lightbox img{max-width:90vw;max-height:90vh;box-shadow:0 4px 20px rgba(0,0,0,.5);} 
-    #lb-close{position:absolute;top:1rem;right:1.3rem;font:700 2rem/1 sans-serif;color:#fff;cursor:pointer;user-select:none;}
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="./index.html" aria-label="Back to homepage">← Home</a>
-      <span>My Tropical Plant Collection</span>
-    </nav>
-  </header>
-
-  <main>
-    <h1>Inside the Greenhouse</h1>
-
-    <p class="lead">
-     From velvety Anthuriums to variegated Monsteras, these are a few favourites I care for when I’m not modelling winds and atmospheres of massive stars. 
-     If you would like more plant-nerd content, my girlfriend and I post semi-regularly on our
-     <a href="https://www.instagram.com/theplanthoppers/" target="_blank" rel="noopener">Instagram</a> page.
-    </p>
-
-    <section class="grid">
-      <!-- 2. Monstera Thai Constellation -->
-      <div class="tile">
-        <img src="./assets/img/plants/thai_constellation.jpg" alt="Monstera Thai Constellation with creamy variegation" />
-        <div>
-          <strong>Monstera <em>‘Thai Constellation’</em></strong>
-          Cream-marbled leaves splattered with stars—slow to grow but worth the wait.
-        </div>
-      </div>
-      <!-- 4. Philodendron Splendid -->
-      <div class="tile">
-        <img src="./assets/img/plants/splendid.jpg" alt="Philodendron Splendid showing velvety heart-shaped leaves" />
-        <div>
-          <strong>Philodendron <em>‘Splendid’</em></strong>
-          A velvety hybrid (verrucosum × melanochrysum) with lime-green veining that lives up to its name.
-        </div>
-      </div>
-      <!-- 5. Alocasia Frydek -->
-      <div class="tile">
-        <img src="./assets/img/plants/frydek.jpg" alt="Alocasia Frydek verigated" />
-        <div>
-          <strong>Alocasia micholitziana <em>‘Frydek’</em> verigated </strong>
-          Velvet-textured foliage; thrives with warmth, humidity, and bright shade.
-        </div>
-      </div>
-      <!-- 6. Alocasia macrorrhizos Aurea -->
-      <div class="tile">
-        <img src="./assets/img/plants/alocasia_aurea.jpg" alt="Alocasia macrorrhizos Aurea with chartreuse leaves" />
-        <div>
-          <strong>Alocasia macrorrhizos <em>‘Aurea’</em></strong>
-          Neon-chartreuse elephant-ear; needs plenty of sun and nutrients to keep glowing.
-        </div>
-      </div>
-      <!-- 7. Anthurium pallidiflorum -->
-      <div class="tile">
-        <img src="./assets/img/plants/pallidiflorum.jpg" alt="Long strappy leaves of Anthurium pallidiflorum hanging" />
-        <div>
-          <strong>Anthurium pallidiflorum</strong>
-          Pendant, narrow leaves can reach a metre long—loves humidity above 70 %.
-        </div>
-      </div>
-      <!-- 8. Queen Anthurium -->
-      <div class="tile">
-        <img src="./assets/img/plants/queen_anthurium.jpg" alt="Anthurium warocqueanum with elongated velvety leaves" />
-        <div>
-          <strong>Anthurium warocqueanum</strong>
-          The fabled “Queen” with velvety dark leaves and silver midrib—temperamental but majestic.
-        </div>
-      </div>
-      <!-- 10. Syngonium Mojito -->
-      <div class="tile">
-        <img src="./assets/img/plants/syngonium_mojito.jpg" alt="Syngonium Mojito with mottled variegation" />
-        <div>
-          <strong>Syngonium <em>‘Mojito’</em></strong>
-          Speckled lime-and-green foliage; unfussy and fast-growing—great for propagation swaps.
-        </div>
-      </div>
-      <!-- 11. Begonia maculata -->
-      <div class="tile">
-        <img src="./assets/img/plants/begonia_maculata.jpg" alt="Begonia maculata with silver polka-dot leaves" />
-        <div>
-          <strong>Begonia maculata</strong>
-          Polka-dotted leaves and red undersides; appreciates bright shade and even moisture.
-        </div>
-      </div>
-      <!-- 12. Aglaonema pictum Tricolor -->
-      <div class="tile">
-        <img src="./assets/img/plants/aglaonema_tricolor.jpg" alt="Aglaonema pictum tricolor camouflage-pattern leaves" />
-        <div>
-          <strong>Aglaonema pictum <em>‘Tricolor’</em></strong>
-          Camouflage-patterned leaves in three shades of green—slow but striking.
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>© 2025 Dwaipayan Debnath · Built with GPT O3 &amp; GitHub Pages · Last updated: 2 July 2025</footer>
-
-  <!-- Lightbox overlay -->
-  <div id="lightbox" hidden>
-    <span id="lb-close">&times;</span>
-    <img id="lb-img" alt="zoomed plant image" />
+/* Photographs and suppliers in the greenhouse growing guides. */
+.greenhouse-care-photo{margin:18px 0 0;min-width:0}
+.greenhouse-care-photo .zoom-link{display:grid;place-items:center;background:#e7ece3;border-radius:9px;overflow:hidden}
+.greenhouse-care-photo img{display:block;width:100%;height:260px;object-fit:contain;object-position:center}
+.greenhouse-care-photo figcaption{font-size:.76rem;color:var(--muted);margin-top:7px;text-align:center}
+.greenhouse-intro-card .supplier-note{margin-top:16px;padding-top:13px;border-top:1px solid var(--line);font-size:.85rem;line-height:1.65;color:var(--muted)}
+.supplier-note strong{color:var(--ink)}
+@media(max-width:720px){.greenhouse-care-photo img{height:220px}}
+</style>
+</head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><nav class="container nav" aria-label="Main navigation"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">DD</span>Dwaipayan Debnath</a><a class="button outline" href="index.html">← Home</a></nav></header><main class="container" id="main"><div class="page-heading"><div class="eyebrow">Beyond astrophysics</div><h1>Inside the greenhouse.</h1><p>From velvety Anthuriums to variegated Monsteras, these are a few favourites I care for when I’m not modelling massive stars. Find more plant content on <a href="https://www.instagram.com/theplanthoppers/">@theplanthoppers</a>.</p><nav class="greenhouse-jump" aria-label="Greenhouse page sections"><a href="#aroids">My love for aroids ↓</a><a href="#soil-mix">Soil mix ↓</a><a href="#moss-poles">Moss poles ↓</a><a href="#plant-genera">What I grow ↓</a><a href="#favourites">My favourites ↓</a></nav></div>
+<section class="greenhouse-intro" aria-label="About my greenhouse">
+  <article id="aroids" class="greenhouse-love">
+    <div><div class="eyebrow">My passion for tropical plants</div><h2>Aroids and beyond.</h2><p>Growing up in a tropical country, this is a part of my home that I still can bring to my present living space. What I particularly love about aroids is the remarkable diversity of their foliage. Sometimes you see a new leaf pop up, and I think to myself how could nature devise something of such aweness and beauty. They can range from the velvety, deeply veined leaves of Anthuriums and Philodendrons to the fenestrated leaves of Monsteras, and the big string leaves of Alocasias (literally grows as weed in my home-town).</p><p>I enjoy watching plants develop from their juvenile to mature growth forms, and it gives me a sense of calmness and teaches me the fruits of passion, perseverance and patience. As a fellow science nerd I also geek about their natural habitats and growing conditions. My collection extends beyond aroids to begonias, tropical yams and other unusual foliage plants.</p></div>
+    <figure><a class="zoom-link" data-zoom href="assets/img/plants/thai_constellation.jpg"><img src="assets/img/plants/thai_constellation.jpg" alt="Variegated Monstera Thai Constellation in my plant collection" loading="lazy"></a><figcaption>Monstera deliciosa ‘Thai Constellation’ · From my collection</figcaption></figure>
+  </article>
+  <div class="greenhouse-care-grid">
+    <article class="greenhouse-intro-card" id="soil-mix"><div class="eyebrow">Growing medium</div><h2>My soil mix.</h2><p>For most of my aroids, I prefer a chunky, well-aerated mix that retains some moisture while allowing air to reach the roots. I adjust the components according to the plant and how quickly the pot dries out.</p><figure class="greenhouse-care-photo"><a class="zoom-link" data-zoom href="assets/img/plants/soil.jpeg"><img src="assets/img/plants/soil.jpeg" alt="My chunky aroid growing mix" loading="lazy"></a><figcaption>My aroid soil mix · Click to enlarge</figcaption></figure><ul><li><strong>Bark</strong><span>Creates air pockets and gives the mix structure.</span></li><li><strong>Perlite</strong><span>Improves aeration and drainage.</span></li><li><strong>Coco coir</strong><span>Retains moisture without excessive compaction.</span></li><li><strong>Charcoal</strong><span>Improves drainage, and controls odors.</span></li><li><strong>LECA</strong><span>Expanded clay pebbles that provide a porous, inorganic growing medium.</span></li><li><strong>Pumice</strong><span>A porous mineral component that improves aeration and drainage.</span></li></ul><p class="mix-note"><strong>Alternatives:</strong> For moisture-loving begonias, I add vermiculite. For Alocasias, a semi-hydroponic mineral mix with pumice and zeolite is another option I favour.</p><p class="supplier-note"><strong>Where I buy my supplies:</strong> I get my coco coir, perlite, LECA and pumice from AVEVE, and my charcoal from Sybotanica.</p></article>
+    <article class="greenhouse-intro-card" id="moss-poles"><div class="eyebrow">Climbing and maturation</div><h2>Moss poles.</h2><p>Many of the aroids I grow are natural climbers. Giving them a vertical support allows their aerial roots to attach and helps them develop larger, more mature foliage under suitable growing conditions.</p><figure class="greenhouse-care-photo"><a class="zoom-link" data-zoom href="assets/img/plants/moss_pole.jpeg"><img src="assets/img/plants/moss_pole.jpeg" alt="Sphagnum moss used to fill my climbing poles" loading="lazy"></a><figcaption>Sphagnum moss for my poles · Click to enlarge</figcaption></figure><ul><li><strong>Support</strong><span>A sphagnum moss pole provides a rooting surface for aerial roots.</span></li><li><strong>Placement</strong><span>Position the climbing side of the stem towards the pole.</span></li><li><strong>Moisture</strong><span>Keep the moss lightly moist rather than constantly saturated.</span></li><li><strong>Growth</strong><span>Extend the pole as the climbing stem grows.</span></li></ul><p class="mix-note">Climbing Philodendrons, Monsteras, Rhaphidophoras, Syngoniums and Epipremnums can particularly benefit from support. Not every aroid is a climber, so I adapt the setup to the plant's natural growth habit.</p><p class="supplier-note"><strong>Where I buy my supplies:</strong> I order the sphagnum moss from Sybotanica, and the poles themselves from Amazon.</p></article>
   </div>
-
-  <script>
-    // Lightbox logic
-    const lb=document.getElementById('lightbox');
-    const lbImg=document.getElementById('lb-img');
-    const closeLb=()=>{lb.hidden=true;lbImg.src='';};
-    document.querySelectorAll('.tile img').forEach(img=>{
-      img.addEventListener('click',()=>{lbImg.src=img.src;lb.hidden=false;});
+  <article class="greenhouse-intro-card" id="plant-genera"><div class="eyebrow">Plant diversity</div><h2>What I grow.</h2><p>My collection includes both naturally occurring species and horticultural hybrids and variegated cultivars, across several botanical families.</p><div class="genus-groups"><div class="genus-group"><h3>Aroids · Araceae</h3><p>Climbers, terrestrial foliage plants and epiphytes.</p><div class="genus-chips"><span>Monstera</span><span>Rhaphidophora</span><span>Alocasia</span><span>Anthurium</span><span>Philodendron</span><span>Aglaonema</span><span>Epipremnum</span><span>Syngonium</span><span>Scindapsus</span></div></div><div class="genus-group"><h3>Beyond aroids</h3><p>More tropical genera with fascinating foliage and growth habits.</p><div class="genus-chips"><span>Begonia</span><span>Dioscorea</span><span>Peperomia</span><span>Hoya</span><span>Rhipsalis</span></div><p style="margin:14px 0 8px"><strong>Carnivorous plants</strong></p><div class="genus-chips"><span>Pinguicula</span><span>Nepenthes</span></div></div></div><p style="margin-top:16px">These are just some of the plants I grow, alongside many others.</p></article>
+</section>
+<section id="favourites" class="greenhouse-collection" aria-label="Tropical plant collection">
+<div class="collection-heading"><div><div class="eyebrow">From my collection</div><h2>Some of my favourites.</h2><p class="favourites-intro">Select a plant to explore its botanical background, growing conditions and a photograph from my collection.</p>
+<div class="plant-tabs" role="tablist" aria-label="Choose a plant">
+<button id="tab-thai-constellation" type="button" role="tab" aria-controls="plant-thai-constellation" aria-selected="true" tabindex="0">Thai Constellation</button>
+<button id="tab-splendid" type="button" role="tab" aria-controls="plant-splendid" aria-selected="false" tabindex="-1">Philodendron Splendid</button>
+<button id="tab-frydek" type="button" role="tab" aria-controls="plant-frydek" aria-selected="false" tabindex="-1">Variegated Frydek</button>
+<button id="tab-alocasia-aurea" type="button" role="tab" aria-controls="plant-alocasia-aurea" aria-selected="false" tabindex="-1">Alocasia Aurea</button>
+<button id="tab-pallidiflorum" type="button" role="tab" aria-controls="plant-pallidiflorum" aria-selected="false" tabindex="-1">Anthurium pallidiflorum</button>
+<button id="tab-queen-anthurium" type="button" role="tab" aria-controls="plant-queen-anthurium" aria-selected="false" tabindex="-1">Queen Anthurium</button>
+<button id="tab-syngonium-mojito" type="button" role="tab" aria-controls="plant-syngonium-mojito" aria-selected="false" tabindex="-1">Syngonium Mojito</button>
+<button id="tab-begonia-maculata" type="button" role="tab" aria-controls="plant-begonia-maculata" aria-selected="false" tabindex="-1">Begonia Amphioxus</button>
+<button id="tab-aglaonema-tricolor" type="button" role="tab" aria-controls="plant-aglaonema-tricolor" aria-selected="false" tabindex="-1">Aglaonema Tricolor</button>
+</div>
+<div class="plant-profiles">
+<article class="plant-profile" id="plant-thai-constellation" role="tabpanel" aria-labelledby="tab-thai-constellation" tabindex="0">
+  <div class="plant-information">
+    <h2><i>Monstera deliciosa</i> ‘Thai Constellation’</h2>
+    <span class="plant-type">Variegated cultivar</span>
+    <p class="plant-description">Creamy and marbled foliage with pale speckles and the characteristic fenestrations of mature Monstera leaves.</p>
+    <dl class="plant-facts"><div><dt>Family</dt><dd>Araceae</dd></div><div><dt>Native range</dt><dd>Southern Mexico to Guatemala (parent species).</dd></div><div><dt>Classification</dt><dd>A horticultural selection of M. deliciosa, propagated for its characteristic variegation.</dd></div><div><dt>Habitat</dt><dd>Warm, humid tropical forest; can mature while crawling and climbing.</dd></div></dl>
+    <h3>Preferred growing conditions</h3>
+    <dl class="plant-climate"><div><dt>Temperature</dt><dd>20–28 °C</dd></div><div><dt>Humidity (RH)</dt><dd>55–75%</dd></div></dl>
+    <dl class="plant-facts plant-care"><div><dt>Light</dt><dd>Bright, filtered light</dd></div><div><dt>Watering</dt><dd>Allow the upper mix to dry slightly; water thoroughly, then drain.</dd></div><div><dt>Growing mix</dt><dd>Airy aroid mix with bark, perlite, coco coir, and charcoal</dd></div></dl>
+    <div class="plant-references"><strong>Botanical references</strong><br><a href="https://powo.science.kew.org/taxon/87478-1" target="_blank" rel="noopener noreferrer">Kew · native range ↗</a><a href="https://www.rhs.org.uk/plants/520520/monstera-deliciosa-thai-constellation-v/details" target="_blank" rel="noopener noreferrer">Cultivar ↗</a></div>
+  </div>
+  <figure class="plant-photo"><a class="zoom-link" data-zoom href="assets/img/plants/thai_constellation.jpg"><img src="assets/img/plants/thai_constellation.jpg" alt="Monstera Thai Constellation with cream-speckled leaves" width="1200" height="1600" loading="eager"></a><figcaption>From my collection · Click to enlarge</figcaption></figure>
+</article>
+<article class="plant-profile" id="plant-splendid" role="tabpanel" aria-labelledby="tab-splendid" tabindex="0">
+  <div class="plant-information">
+    <h2><i>Philodendron</i> ‘Splendid’</h2>
+    <span class="plant-type">Interspecific hybrid</span>
+    <p class="plant-description">A velvety climbing philodendron with elongated heart-shaped leaves, contrasting veins and reddish tones on the undersides. It combines features of two striking rainforest species.</p>
+    <dl class="plant-facts"><div><dt>Family</dt><dd>Araceae</dd></div><div><dt>Native range</dt><dd>Parent species: P. verrucosum from Costa Rica to Peru; P. melanochrysum from Colombia.</dd></div><div><dt>Classification</dt><dd>Cultivated hybrid of P. verrucosum and P. melanochrysum. It has no natural native range of its own.</dd></div><div><dt>Habitat</dt><dd>Humid tropical forest-like conditions with good air circulation.</dd></div></dl>
+    <h3>Preferred growing conditions</h3>
+    <dl class="plant-climate"><div><dt>Temperature</dt><dd>20–27 °C</dd></div><div><dt>Humidity (RH)</dt><dd>65–80%</dd></div></dl>
+    <dl class="plant-facts plant-care"><div><dt>Light</dt><dd>Bright, indirect light</dd></div><div><dt>Watering</dt><dd>Keep lightly moist; avoid saturated or compacted soil.</dd></div><div><dt>Growing mix</dt><dd>Airy aroid mix with bark, perlite, coco coir, and charcoal. To mature the plant it needs a moss pole or other climbing support.</dd></div></dl>
+    <div class="plant-references"><strong>Botanical references</strong><br><a href="https://www.aroidcultivars.org/aroid-cultivars/philodendron/splendid" target="_blank" rel="noopener noreferrer">Aroid cultivar registry · hybrid ↗</a><a href="https://powo.science.kew.org/taxon/314474-2" target="_blank" rel="noopener noreferrer">Kew · P. verrucosum ↗</a><a href="https://powo.science.kew.org/taxon/87882-1" target="_blank" rel="noopener noreferrer">Kew · P. melanochrysum ↗</a></div>
+  </div>
+  <figure class="plant-photo"><a class="zoom-link" data-zoom href="assets/img/plants/splendid.jpg"><img src="assets/img/plants/splendid.jpg" alt="Philodendron Splendid with velvety heart-shaped leaves" width="1200" height="1600" loading="lazy"></a><figcaption>From my collection · Click to enlarge</figcaption></figure>
+</article>
+<article class="plant-profile" id="plant-frydek" role="tabpanel" aria-labelledby="tab-frydek" tabindex="0">
+  <div class="plant-information">
+    <h2><i>Alocasia micholitziana</i> ‘Frydek’ (variegated)</h2>
+    <span class="plant-type">Variegated cultivar</span>
+    <p class="plant-description">Arrow-shaped, velvet-textured leaves with pale veins.</p>
+    <dl class="plant-facts"><div><dt>Family</dt><dd>Araceae</dd></div><div><dt>Native range</dt><dd>Luzon, Philippines (parent species).</dd></div><div><dt>Classification</dt><dd>Variegated horticultural form of A. micholitziana, commonly sold as Frydek.</dd></div><div><dt>Habitat</dt><dd>Warm, moist tropical conditions of south-east Asia with filtered light.</dd></div></dl>
+    <h3>Preferred growing conditions</h3>
+    <dl class="plant-climate"><div><dt>Temperature</dt><dd>20–28 °C</dd></div><div><dt>Humidity (RH)</dt><dd>60–80%</dd></div></dl>
+    <dl class="plant-facts plant-care"><div><dt>Light</dt><dd>Bright, indirect light</dd></div><div><dt>Watering</dt><dd>Keep evenly moist.</dd></div><div><dt>Growing mix</dt><dd>Airy aroid mix with bark, perlite, coco coir, and charcoal; Does better in semi-hydro mix made with pumice and zeolite</dd></div></dl>
+    <div class="plant-references"><strong>Botanical references</strong><br><a href="https://powo.science.kew.org/taxon/84208-1" target="_blank" rel="noopener noreferrer">Kew · parent species ↗</a><a href="https://www.rhs.org.uk/plants/alocasia/growing-guide" target="_blank" rel="noopener noreferrer">RHS · Alocasia cultivation ↗</a></div>
+  </div>
+  <figure class="plant-photo"><a class="zoom-link" data-zoom href="assets/img/plants/frydek.jpg"><img src="assets/img/plants/frydek.jpg" alt="Variegated Alocasia Frydek with pale patches and veins" width="1200" height="1600" loading="lazy"></a><figcaption>From my collection · Click to enlarge</figcaption></figure>
+</article>
+<article class="plant-profile" id="plant-alocasia-aurea" role="tabpanel" aria-labelledby="tab-alocasia-aurea" tabindex="0">
+  <div class="plant-information">
+    <h2><i>Alocasia macrorrhizos</i> ‘Aurea’</h2>
+    <span class="plant-type">Yellow-variegated form</span>
+    <p class="plant-description">Large elephant-ear like leaves with vivid yellow to neon coloration.</p>
+    <dl class="plant-facts"><div><dt>Family</dt><dd>Araceae</dd></div><div><dt>Native range</dt><dd>Central Malesia to Queensland (Murray Group), Australia (parent species).</dd></div><div><dt>Classification</dt><dd>A golden-variegated horticultural form of the giant taro; “Aurea” is a trade designation referring to the yellow variegation.</dd></div><div><dt>Habitat</dt><dd>Warm, humid tropical conditions.</dd></div></dl>
+    <h3>Preferred growing conditions</h3>
+    <dl class="plant-climate"><div><dt>Temperature</dt><dd>22–30 °C</dd></div><div><dt>Humidity (RH)</dt><dd>60–80%</dd></div></dl>
+    <dl class="plant-facts plant-care"><div><dt>Light</dt><dd>Bright, filtered light</dd></div><div><dt>Watering</dt><dd>Do not let it dry completely, or leave the roots standing in water.</dd></div><div><dt>Growing mix</dt><dd>Airy aroid mix with bark, perlite, coco coir, and charcoal; Does better in semi-hydro mix made with pumice and zeolite</dd></div></dl>
+    <div class="plant-references"><strong>Botanical references</strong><br><a href="https://powo.science.kew.org/taxon/60444565-2" target="_blank" rel="noopener noreferrer">Kew · parent species ↗</a><a href="https://www.rhs.org.uk/plants/alocasia/growing-guide" target="_blank" rel="noopener noreferrer">RHS · Alocasia cultivation ↗</a></div>
+  </div>
+  <figure class="plant-photo"><a class="zoom-link" data-zoom href="assets/img/plants/alocasia_aurea.jpg"><img src="assets/img/plants/alocasia_aurea.jpg" alt="Alocasia macrorrhizos Aurea with chartreuse foliage" width="1200" height="1600" loading="lazy"></a><figcaption>From my collection · Click to enlarge</figcaption></figure>
+</article>
+<article class="plant-profile" id="plant-pallidiflorum" role="tabpanel" aria-labelledby="tab-pallidiflorum" tabindex="0">
+  <div class="plant-information">
+    <h2><i>Anthurium pallidiflorum</i></h2>
+    <span class="plant-type">Botanical species</span>
+    <p class="plant-description">Long, narrow leaves with a soft velvety surface. Mature foliage can become impressively long, making this species especially attractive on an elevated shelf or in a hanging pot.</p>
+    <dl class="plant-facts"><div><dt>Family</dt><dd>Araceae</dd></div><div><dt>Native range</dt><dd>Western Ecuador.</dd></div><div><dt>Classification</dt><dd>Naturally occurring species.</dd></div><div><dt>Habitat</dt><dd>Humid tropical forest-like conditions; protect from dry air and stagnant moisture.</dd></div></dl>
+    <h3>Preferred growing conditions</h3>
+    <dl class="plant-climate"><div><dt>Temperature</dt><dd>20–27 °C</dd></div><div><dt>Humidity (RH)</dt><dd>70–85%</dd></div></dl>
+    <dl class="plant-facts plant-care"><div><dt>Light</dt><dd>Filtered light, no harsh sun</dd></div><div><dt>Watering</dt><dd>Maintain even moisture without waterlogging.</dd></div><div><dt>Growing mix</dt><dd>Airy aroid mix with bark, perlite, coco coir, and charcoal; allow space for leaves to hang freely.</dd></div></dl>
+  <div class="plant-references"><strong>Botanical references</strong><br><a href="https://powo.science.kew.org/taxon/15544-2" target="_blank" rel="noopener noreferrer">Kew · species ↗</a><a href="https://www.rhs.org.uk/plants/anthuriums/how-to-grow-anthuriums" target="_blank" rel="noopener noreferrer">RHS · Anthurium cultivation ↗</a></div>
+  </div>
+  <figure class="plant-photo"><a class="zoom-link" data-zoom href="assets/img/plants/pallidiflorum.jpg"><img src="assets/img/plants/pallidiflorum.jpg" alt="Long pendant leaves of Anthurium pallidiflorum" width="1200" height="1600" loading="lazy"></a><figcaption>From my collection · Click to enlarge</figcaption></figure>
+</article>
+<article class="plant-profile" id="plant-queen-anthurium" role="tabpanel" aria-labelledby="tab-queen-anthurium" tabindex="0">
+  <div class="plant-information">
+    <h2><i>Anthurium warocqueanum</i></h2>
+    <span class="plant-type">Botanical species</span>
+    <p class="plant-description">The Queen Anthurium is prized for its elongated, dark velvety leaves and pale contrasting veins. Its dramatic mature leaves reward stable, humid growing conditions. Not a plant for beginner plant parents, is extremely fussy and loves stable conditions. Some species grows on higher elevation, thus tolerates changes, however the varieties growing in lower ranges close to the river will need a temperature and humidity controlled environment.</p>
+    <dl class="plant-facts"><div><dt>Family</dt><dd>Araceae</dd></div><div><dt>Native range</dt><dd>Colombia.</dd></div><div><dt>Classification</dt><dd>Naturally occurring species.</dd></div><div><dt>Habitat</dt><dd>Warm, humid tropical rainforest conditions.</dd></div></dl>
+    <h3>Preferred growing conditions</h3>
+    <dl class="plant-climate"><div><dt>Temperature</dt><dd>20–27 °C</dd></div><div><dt>Humidity (RH)</dt><dd>70–85%</dd></div></dl>
+    <dl class="plant-facts plant-care"><div><dt>Light</dt><dd>Bright, indirect light</dd></div><div><dt>Watering</dt><dd>Loves staying lightly moist; avoid drying and waterlogging.</dd></div><div><dt>Growing mix</dt><dd>Airy aroid mix with bark, perlite, coco coir, and charcoal; the new leaves are extremely fragile, thus allow space for leaves to hang freely; a climbing support such as moss pole may be necessary as the plant matures. </dd></div></dl>
+    <div class="plant-references"><strong>Botanical references</strong><br><a href="https://powo.science.kew.org/taxon/85496-1" target="_blank" rel="noopener noreferrer">Kew · species ↗</a><a href="https://www.rhs.org.uk/plants/1361/anthurium-warocqueanum/details" target="_blank" rel="noopener noreferrer">RHS · species and care ↗</a></div>
+  </div>
+  <figure class="plant-photo"><a class="zoom-link" data-zoom href="assets/img/plants/queen_anthurium.jpg"><img src="assets/img/plants/queen_anthurium.jpg" alt="Queen Anthurium with elongated dark velvety leaves" width="1200" height="1600" loading="lazy"></a><figcaption>From my collection · Click to enlarge</figcaption></figure>
+</article>
+<article class="plant-profile" id="plant-syngonium-mojito" role="tabpanel" aria-labelledby="tab-syngonium-mojito" tabindex="0">
+  <div class="plant-information">
+    <h2><i>Syngonium podophyllum</i> ‘Mojito’</h2>
+    <span class="plant-type">Variegated horticultural cultivar</span>
+    <p class="plant-description">Arrowhead and mottled foliage in several shades of green. Young leaves are arrow-shaped, while mature climbing foliage can develop a more divided pendant shaped. Good for beginner plant parents.</p>
+    <dl class="plant-facts"><div><dt>Family</dt><dd>Araceae</dd></div><div><dt>Native range</dt><dd>Mexico through tropical America (parent species).</dd></div><div><dt>Classification</dt><dd>A mottled-leaf horticultural selection sold as “Mojito”.</dd></div><div><dt>Habitat</dt><dd>Warm tropical conditions; adaptable to ordinary indoor humidity.</dd></div></dl>
+    <h3>Preferred growing conditions</h3>
+    <dl class="plant-climate"><div><dt>Temperature</dt><dd>18–28 °C</dd></div><div><dt>Humidity (RH)</dt><dd>50–75%</dd></div></dl>
+    <dl class="plant-facts plant-care"><div><dt>Light</dt><dd>Medium to bright, indirect light</dd></div><div><dt>Watering</dt><dd>Water when the upper layer begins to dry.</dd></div><div><dt>Growing mix</dt><dd>Airy aroid mix with bark, perlite, coco coir, and charcoal; can be trained both as a climber or trailing plant.</dd></div></dl>
+    <div class="plant-references"><strong>Botanical references</strong><br><a href="https://powo.science.kew.org/taxon/89152-1" target="_blank" rel="noopener noreferrer">Kew · parent species ↗</a><a href="https://www.rhs.org.uk/plants/types/houseplants/monsteras-and-more" target="_blank" rel="noopener noreferrer">RHS · arum houseplants ↗</a></div>
+  </div>
+  <figure class="plant-photo"><a class="zoom-link" data-zoom href="assets/img/plants/syngonium_mojito.jpg"><img src="assets/img/plants/syngonium_mojito.jpg" alt="Syngonium Mojito with mottled green variegation" width="1200" height="1600" loading="lazy"></a><figcaption>From my collection · Click to enlarge</figcaption></figure>
+</article>
+<article class="plant-profile" id="plant-begonia-maculata" role="tabpanel" aria-labelledby="tab-begonia-maculata" tabindex="0">
+  <div class="plant-information">
+    <h2><i>Begonia amphioxus</i></h2>
+    <span class="plant-type">Botanical species</span>
+    <p class="plant-description">Asymmetrical, lime-green leaves with bright red polka dots, and produces vibrant pink-colored flowers. Excellent for terrarium growing conditions.</p>
+    <dl class="plant-facts"><div><dt>Family</dt><dd>Begoniaceae</dd></div><div><dt>Native range</dt><dd>Native to Sabah state, Malaysia.</dd></div><div><dt>Classification</dt><dd>A naturally occurring species.</dd></div><div><dt>Habitat</dt><dd>Grows in light shade on limestone, either at the base of cliffs or on top of outcrops.</dd></div></dl>
+    <h3>Preferred growing conditions</h3>
+    <dl class="plant-climate"><div><dt>Temperature</dt><dd>18–26 °C</dd></div><div><dt>Humidity (RH)</dt><dd>70–90%</dd></div></dl>
+    <dl class="plant-facts plant-care"><div><dt>Light</dt><dd>Bright, indirect light</dd></div><div><dt>Watering</dt><dd>Likes constant moisture.</dd></div><div><dt>Growing mix</dt><dd>Airy aroid mix with bark, perlite, coco coir, and charcoal with vermiculite to retain moisture.</dd></div></dl>
+    <div class="plant-references"><strong>Botanical references</strong><br><a href="https://powo.science.kew.org/taxon/939486-1" target="_blank" rel="noopener noreferrer">Kew · species ↗</a><a href="https://www.rhs.org.uk/plants/228154/begonia-amphioxus/details" target="_blank" rel="noopener noreferrer">RHS · species ↗</a><a href="https://www.nparks.gov.sg/florafaunaweb/flora/6/6/6609" target="_blank" rel="noopener noreferrer">NParks · habitat and cultivation ↗</a></div>
+  </div>
+  <figure class="plant-photo"><a class="zoom-link" data-zoom href="assets/img/plants/begonia_maculata.jpg"><img src="assets/img/plants/begonia_maculata.jpg" alt="Begonia amphioxus with narrow green leaves and red spots" width="1200" height="1600" loading="lazy"></a><figcaption>From my collection · Click to enlarge</figcaption></figure>
+</article>
+<article class="plant-profile" id="plant-aglaonema-tricolor" role="tabpanel" aria-labelledby="tab-aglaonema-tricolor" tabindex="0">
+  <div class="plant-information">
+    <h2><i>Aglaonema pictum</i> ‘Tricolor’</h2>
+    <span class="plant-type">Selected foliage form</span>
+    <p class="plant-description">An exceptionally patterned Chinese evergreen with camouflage-like patches in several shades of green. Not the easiest Aglaonema for a new plant parent.</p>
+    <dl class="plant-facts"><div><dt>Family</dt><dd>Araceae</dd></div><div><dt>Native range</dt><dd>Sumatra, including Nias, Indonesia (species range).</dd></div><div><dt>Classification</dt><dd>A three-coloured form of A. pictum, commonly sold as Tricolor. Kew treats the historical name A. pictum var. tricolor as a synonym of A. pictum, rather than a separate accepted variety.</dd></div><div><dt>Habitat</dt><dd>Airy aroid mix with bark, perlite, coco coir, and charcoal; avoid cold drafts.</dd></div></dl>
+    <h3>Preferred growing conditions</h3>
+    <dl class="plant-climate"><div><dt>Temperature</dt><dd>22–28 °C</dd></div><div><dt>Humidity (RH)</dt><dd>65–80%</dd></div></dl>
+    <dl class="plant-facts plant-care"><div><dt>Light</dt><dd>Soft, filtered light</dd></div><div><dt>Watering</dt><dd>Water when the upper mix begins to dry, maintaining gentle moisture.</dd></div><div><dt>Growing mix</dt><dd>Airy, moisture-retentive substrate; avoid compacted or cold, wet soil.</dd></div></dl>
+    <div class="plant-references"><strong>Botanical references</strong><br><a href="https://powo.science.kew.org/taxon/84094-1" target="_blank" rel="noopener noreferrer">Kew · species and synonyms ↗</a><a href="https://www.rhs.org.uk/plants/types/houseplants/monsteras-and-more" target="_blank" rel="noopener noreferrer">RHS · arum houseplants ↗</a></div>
+  </div>
+  <figure class="plant-photo"><a class="zoom-link" data-zoom href="assets/img/plants/aglaonema_tricolor.jpg"><img src="assets/img/plants/aglaonema_tricolor.jpg" alt="Aglaonema pictum Tricolor with camouflage-patterned leaves" width="790" height="897" loading="lazy"></a><figcaption>From my collection · Click to enlarge</figcaption></figure>
+</article>
+</div>
+<p class="plant-note">Growing conditions are approximate indoor settings. For cultivated selections and hybrids, the native range refers to the parent species.</p>
+</section></main><footer class="footer"><div class="container"><div class="footer-bottom"><span>© 2026 Dwaipayan Debnath</span><span><a href="index.html">Home</a> · <a href="index.html#contact">Contact</a></span></div></div></footer><dialog class="dialog" id="image-dialog" aria-label="Enlarged image"><button type="button" aria-label="Close image">×</button><img alt=""></dialog><script>
+(function(){
+  'use strict';
+  const collection = document.querySelector('.greenhouse-collection');
+  const tabs = Array.from(collection.querySelectorAll('[role="tab"]'));
+  const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+  function select(index, focus){
+    tabs.forEach((tab,i)=>{
+      tab.setAttribute('aria-selected',String(i===index));
+      tab.tabIndex=i===index?0:-1;
+      panels[i].hidden=i!==index;
     });
-    document.getElementById('lb-close').addEventListener('click',closeLb);
-    lb.addEventListener('click',e=>{if(e.target.id==='lightbox')closeLb();});
-  </script>
-</body>
-</html>
+    if(focus) tabs[index].focus();
+  }
+  tabs.forEach((tab,i)=>{
+    tab.addEventListener('click',()=>select(i,false));
+    tab.addEventListener('keydown',event=>{
+      let next;
+      if(event.key==='ArrowRight'||event.key==='ArrowDown') next=(i+1)%tabs.length;
+      else if(event.key==='ArrowLeft'||event.key==='ArrowUp') next=(i-1+tabs.length)%tabs.length;
+      else if(event.key==='Home') next=0;
+      else if(event.key==='End') next=tabs.length-1;
+      else return;
+      event.preventDefault();select(next,true);
+    });
+  });
+  select(0,false);collection.classList.add('tabs-ready');
+})();
+</script>
+</body></html>

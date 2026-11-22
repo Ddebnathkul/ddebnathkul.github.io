@@ -1,463 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Dwaipayan Debnath – Astrophysicist</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- ——— SEO essentials ——— -->
-  <meta name="description" content="Dwaipayan (D.) Debnath | PhD candidate in massive–star atmospheres &amp; winds at KU Leuven. Researcher in radiation-hydrodynamics &amp; stellar winds." />
-  <!-- Google still ignores keywords for ranking, but including them can help other engines & on-site search -->
-  <meta name="keywords" content="Dwaipayan Debnath, D Debnath, D. Debnath, Debnath D., Debnath Dwaipayan, astrophysicist, KU Leuven, stellar winds, massive stars, radiation hydrodynamics" />
-  <meta name="author" content="Dwaipayan Debnath" />
-  <meta name="google-site-verification" content="bNYJlW4XiFIXmzcXahtivk09VaiMTz0DPajr-knH8Mw" />
-
-  <!-- ——— Open Graph / social sharing ——— -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dwaipayan Debnath – Astrophysicist" />
-  <meta property="og:description" content="PhD candidate at KU Leuven studying massive-star atmospheres &amp; winds" />
-  <meta property="og:image" content="https://dwaipayandebnath.github.io/assets/img/personal_img.png" />
-  <meta property="og:url" content="https://dwaipayandebnath.github.io/" />
-  <link rel="canonical" href="https://dwaipayandebnath.github.io/" />
-
-  <!-- ———  Web-fonts  ——— -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-
-  <!-- ——— Person structured data ——— -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Dwaipayan Debnath",
-    "alternateName": [
-      "D. Debnath",
-      "D Debnath",
-      "Debnath D.",
-      "Debnath Dwaipayan"
-    ],
-    "jobTitle": "PhD Candidate in Astrophysics",
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "KU Leuven",
-      "url": "https://www.kuleuven.be"
-    },
-    "url": "https://dwaipayandebnath.github.io/",
-    "image": "https://dwaipayandebnath.github.io/assets/img/personal_img.png",
-    "sameAs": [
-      "https://be.linkedin.com/in/dwaipayan-debnath-a316929b",
-      "https://orcid.org/0000-0002-9571-2590"
-    ]
+<html lang="en" class="no-js"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dwaipayan Debnath · Astrophysics</title>
+<meta name="description" content="Dwaipayan Debnath, astrophysicist at KU Leuven. Multidimensional radiation hydrodynamics of massive-star atmospheres and winds, non-LTE opacities and stellar mass loss.">
+<meta name="author" content="Dwaipayan Debnath"><meta name="google-site-verification" content="bNYJlW4XiFIXmzcXahtivk09VaiMTz0DPajr-knH8Mw">
+<link rel="canonical" href="https://ddebnathkul.github.io/"><meta property="og:type" content="website"><meta property="og:title" content="Dwaipayan Debnath · Astrophysics"><meta property="og:description" content="From deep stellar envelopes to supersonic winds."><meta property="og:url" content="https://ddebnathkul.github.io/"><meta property="og:image" content="https://ddebnathkul.github.io/assets/img/portrait.webp"><meta name="theme-color" content="#404e3b">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/css/site.css">
+<style>
+.sim-card .sim-media.media-fit{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;min-height:340px;padding:16px;overflow:hidden}
+.sim-card .sim-media.media-fit img,.sim-card .sim-media.media-fit video{width:100%;height:100%;object-fit:contain;object-position:center center;display:block}
+.sim-card .sim-media.media-fit.media-light{background:#f3f3f3}
+.sim-card .sim-media.media-fit.media-dark{background:#000}
+.sim-card .sim-media.media-fit.media-tall{min-height:380px;aspect-ratio:1/1}
+.sim-card .sim-media.media-fit .video-link{width:100%;height:100%;min-height:0}
+.sim-card .sim-media.media-fit .video-link img{width:100%;height:100%;object-fit:cover}
+@media (max-width:720px){
+  .sim-card .sim-media.media-fit,.sim-card .sim-media.media-fit.media-tall{min-height:260px;aspect-ratio:4/3;padding:10px}
+}
+/* Full-width card with the original vertical O-star wind animation. */
+.sim-grid .sim-card-horizontal {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  align-items: stretch;
+}
+.sim-card .sim-media.wind-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 480px;
+  aspect-ratio: auto;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+}
+.sim-card .sim-media.wind-media img {
+  position: static;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+  background: #000;
+}
+.sim-card-horizontal .details {
+  justify-content: center;
+  padding: 28px 32px;
+}
+.sim-card-horizontal .sim-actions {
+  margin-top: 12px;
+}
+@media (max-width: 720px) {
+  .sim-grid .sim-card-horizontal {
+    grid-template-columns: 1fr;
   }
-  </script>
-
-  <style>
-   :root{
-     /* colour palette */
-     --accent:#1f4e79;   /* deep blue – links & headings */
-     --cta:   #000;      /* used for active nav */
-     --ctb:   #566063;   /* buttons */
-     --bg:    #d6dee6;   /* global background */
-     --text:  #111;
-
-     /* typography */
-     --sans:  'Inter',system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-     --serif: 'Merriweather',Georgia,serif;
-   }
-
-  html{
-    /* Modern browsers: permanently reserve scrollbar space */
-    scrollbar-gutter: stable;
+  .sim-card .sim-media.wind-media {
+    height: 440px;
   }
-  
-  /* Fallback for older browsers */
-  @supports not (scrollbar-gutter: stable){
-    html{ overflow-y: scroll; }
+  .sim-card-horizontal .details {
+    padding: 20px 23px;
   }
+}
+.sim-card .sim-media.bsg-media,
+.sim-card .sim-media.bsg-media img {
+  background: #000;
+}
 
-   /* ——— CSS reset ——— */
-   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+/* STARFRUIT and MFORCE figure cleanup */
+.tool-card.starfruit-card{overflow:hidden;border:1px solid var(--line)!important;background:var(--paper)}
+.starfruit-figure{margin:0;min-width:0;background:#fff;padding:16px;border:0;box-shadow:none}
+.starfruit-figure .zoom-link{display:block;background:#fff}
+.starfruit-figure img{display:block;width:100%;height:auto;background:#fff;border:0;box-shadow:none}
+.starfruit-figure figcaption{padding:8px 0 0;text-align:center;color:var(--muted);font-size:.78rem}
+.tool-card.mforce-card{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;background:var(--paper);border:1px solid var(--line)!important}
+.mforce-figure{margin:0;min-width:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center;background:#fff;padding:16px}
+.mforce-figure .zoom-link{display:block;background:#fff}
+.mforce-figure img{display:block;width:100%;height:auto;background:#fff;border:0;box-shadow:none}
+.mforce-figure figcaption{padding:8px 0 0;text-align:center;color:var(--muted);font-size:.78rem}
+@media(max-width:720px){.mforce-figure,.starfruit-figure{padding:12px}.tool-card.mforce-card{grid-template-columns:1fr}}
+/* Match the greenhouse card to the outreach card while preserving its layout. */
+#beyond .small-card.green{background:var(--paper);border-color:var(--line)}
 
-   html{scroll-behavior:smooth;}
+/* Keep the reordered methods cards in a continuous, full-width sequence. */
+#tools .tool-card.method-wide{grid-column:1/-1;display:grid;grid-template-columns:1.1fr .9fr;align-items:center}
+#tools .method-wide>.zoom-link{min-width:0;align-self:stretch;display:flex;align-items:center;justify-content:center;background:#fff}
+#tools .method-wide>.zoom-link img{width:100%;height:auto;max-height:420px;object-fit:contain;padding:16px}
+@media(max-width:720px){#tools .tool-card.method-wide{grid-template-columns:1fr}#tools .method-wide>.zoom-link img{max-height:340px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Dwaipayan Debnath","alternateName":"D. Debnath","jobTitle":"PhD researcher in astrophysics","affiliation":{"@type":"CollegeOrUniversity","name":"KU Leuven","url":"https://www.kuleuven.be"},"url":"https://ddebnathkul.github.io/","image":"https://ddebnathkul.github.io/assets/img/portrait.webp","sameAs":["https://orcid.org/0000-0002-9571-2590","https://www.kuleuven.be/wieiswie/en/person/00141604","https://be.linkedin.com/in/dwaipayan-debnath-a316929b"]}</script>
+<script src="assets/js/site.js" defer></script>
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead"><nav class="container nav" aria-label="Main navigation"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">DD</span>Dwaipayan Debnath</a><button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button><div class="nav-links" id="nav-links"><a href="#about">About</a><a href="#research">Research</a><a href="#highlights">Simulations</a><a href="#publications">Publications</a><a href="#tools">Tools</a><a href="#contact">Contact</a><a class="nav-cv" href="cv.html">CV ↗</a></div></nav></header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title"><div class="container hero-grid"><div><div class="eyebrow">Stellar winds and atmospheres · Leuven, Belgium</div><h1 id="hero-title">Dwaipayan <span>Debnath.</span></h1><div class="role">PhD researcher · Institute of Astronomy, KU Leuven</div><p class="intro">I model the dynamic atmospheres and radiation-driven winds of hot, massive stars, connecting their turbulent outer envelopes to their outflows.</p><div class="actions"><a class="button ghost" href="#research">Explore my research <span aria-hidden="true"></span></a><a class="button ghost" href="#about">About me <span aria-hidden="true"></span></a><a class="button ghost" href="cv.pdf">Download CV <span aria-hidden="true">↗</span></a></div></div></div><div class="container hero-credit-wrap"><p class="hero-credit">Artwork by Dr. Danny Gasman</p></div></section>
+<section id="about" class="section"><div class="container about"><div><div class="eyebrow">About me</div><h2>From stellar atmospheres to outflows.</h2></div><div class="body-copy"><p>I am a PhD researcher in the <a href="https://fys.kuleuven.be/ster/research-projects/equation-folder/equation-home">EQUATION group</a> at KU Leuven, supervised by Prof. Jon O. Sundqvist and Dr. Nicolas Moens. My research combines radiation hydrodynamics, radiative transfer and high-performance computing to understand massive-star atmospheres and winds in 3D.</p><p> I use unified multidimensional atmosphere and wind simulations to continuously model the deep, optically thick envelope layers into the supersonic outflow. I am interested in how opacity-driven turbulence, radiation-matter interactions and line driving shape the atmospheres of massive stars and their impact of the outcome spectra, and global properties such as mass-loss rates.</p><div class="text-links"><a href="https://www.kuleuven.be/wieiswie/en/person/00141604">KU Leuven profile ↗</a><a href="https://fys.kuleuven.be/ster/research-projects/superstars-3d">SUPERSTARS-3D ↗</a><a href="cv.html">Academic CV ↗</a></div></div><aside class="about-profile"><img src="assets/img/portrait.webp" alt="Portrait of Dwaipayan Debnath" width="615" height="650"><h3>Dwaipayan Debnath<ul><li>Institute of Astronomy · KU Leuven</aside></div></section>
+<section id="research" class="section"><div class="container"><div class="section-title"><div><div class="eyebrow">Research</div><h2>What I work on.</h2></div></div>
+<article class="paper-feature"><div class="feature-copy"><div class="eyebrow">Latest research · November 2026 · Preprint</div><h3>Turbulent atmospheres and winds of blue supergiants</h3><p>Our 2D and 3D models of early B supergiants explore approximate non-LTE ionization, atmospheric turbulence and the effect of the turbulent-pressure gradient on both atmospheric stratification and wind mass loss.</p><div class="actions"><a class="button light" href="https://arxiv.org/abs/2611.18162">Read the preprint ↗</a><a class="button ghost" href="assets/img/b_star.gif">Watch simulation ↗</a></div></div><div class="media"><img src="assets/img/b_star.gif" alt="Animated 3D blue supergiant atmosphere and wind simulation" style="width:100%;height:100%;object-fit:contain;" loading="lazy"></div></article>
+<div class="research-grid">
+<article class="research-card"><span class="num">STELLAR ATMOSPHERES</span><h3>Unified O-star atmospheres &amp; winds</h3><p>Time-dependent models link the turbulent layers near the iron opacity peak to the emerging radiation-driven wind. The velocity field also provides a physical route to photospheric line broadening.</p><a href="https://doi.org/10.1051/0004-6361/202348206">Debnath et al. (2024) ↗</a></article>
+<article class="research-card"><span class="num">RADIATION-MATTER COUPLING</span><h3>Beyond local thermodynamic equilibrium</h3><p>An approximate non-LTE treatment distinguishes opacities for momentum and thermal exchange, allowing shocks in the wind to produce localized differences between gas and radiation temperatures.</p><a href="https://doi.org/10.1051/0004-6361/202660303">Debnath et al. (2026) ↗</a></article>
+<article class="research-card"><span class="num">MASS LOSS &amp; EVOLUTION</span><h3>Winds at low metallicity</h3><p>My broader research interests include mass loss from very massive and evolved stars in metal-poor environments, and the consequences for stellar evolution, compact-object progenitors and radiative feedback.</p><a href="https://lime.ster.kuleuven.be/">Explore LIME ↗</a></article>
+</div></div></section>
+<section id="highlights" class="section simulations"><div class="container"><div class="section-title"><div><div class="eyebrow">Simulations</div><h2>The turbulent surfaces of massive stars.</h2></div><p>These visualisations are based on our 3D RHD models, not artist's impressions.</p></div><div class="sim-grid">
+<figure class="sim-card"><div class="sim-media media-fit media-light"><video id="ostar-video" data-autoplay muted loop playsinline controls preload="metadata" poster="assets/img/ostar-poster.webp" aria-label="Animated local patch of an O-star photosphere"><source src="assets/img/ostar-surface.mp4" type="video/mp4"><a href="assets/img/Ostar_surface.gif">Open the original GIF</a></video></div><figcaption class="details"><span class="tag">3D RHD · O star </span><h3>A turbulent O-star photosphere</h3><p>Emergent intensities across a patch of the stellar surface. The grayscale tracks the emergent radiation temperature, revealing high temperature fluctuations at the surface.</p><div class="sim-actions"><a href="assets/img/Ostar_surface.gif">Original GIF ↗</a><a href="https://doi.org/10.1051/0004-6361/202348206">Read 2D paper ↗</a></a><a href="https://doi.org/10.1051/0004-6361/202556421">Read 3D paper ↗</a></div></figcaption></figure>
+<figure class="sim-card"><div class="sim-media media-fit bsg-media"><img src="assets/img/b_star.gif" alt="Animated 3D blue supergiant atmosphere and wind simulation" loading="lazy"></div><figcaption class="details"><span class="tag">3D RHD · B supergiant </span><h3>A blue supergiant in motion</h3><p>See the large scale structures at the stellar surface and outflow of the B supergiant model. The simulation is described in our 2026 preprint.</p><div class="sim-actions"><a href="https://www.youtube.com/watch?v=ZTtym99vFFk">Watch on YouTube ↗</a><a href="https://arxiv.org/abs/2611.18162">Read paper ↗</a></div></figcaption></figure>
+<figure class="sim-card sim-card-horizontal"><div class="sim-media wind-media"><img src="assets/img/ostar-atmosphere-wind.gif" alt="Time evolution of the gas in a 3D O-star atmosphere and wind" loading="lazy"></div><figcaption class="details"><span class="tag">3D RHD · O star</span><h3>Coupled atmospheres and outflows</h3><p>A view of the highly dynamic atmosphere and outflow, illustrating the coupling between turbulence below the surface and wind outflow.</p><div class="sim-actions"><a href="https://fys.kuleuven.be/ster/research-projects/superstars-3d">Project gallery ↗</a><a href="https://www.youtube.com/watch?v=GnjIa8Vcyk8">Fly through the wind ↗</a></div></figcaption></figure>
+</div><div class="playlist"><div><h3>More simulation films</h3><p>Visit the SUPERSTARS-3D YouTube playlist for OB stars, Wolf-Rayet stars and more.</p></div><a class="button light" href="https://www.youtube.com/playlist?list=PLQwcBRqZUpofNHd9Uj8W3k5oSAGP5VfqC">YouTube playlist <span aria-hidden="true">▶</span></a></div><p class="note">Simulation visualisations are made by EQUATION team, KU Leuven. Colours represent scaling rather than visible-light colours.</p></div></section>
+<section id="publications" class="section"><div class="container"><div class="section-title"><div><div class="eyebrow">Publications</div><h2>Papers.</h2></div></p></div><div class="pub-top"><div class="filters" role="group" aria-label="Filter publications"><button type="button" data-filter="all" aria-pressed="true">All</button><button type="button" data-filter="first" aria-pressed="false">First author</button><button type="button" data-filter="collab" aria-pressed="false">Collaborations</button><button type="button" data-filter="preprint" aria-pressed="false">Preprints</button></div><span class="pub-count" aria-live="polite"></span></div>
+<div class="pub-list" id="publication-list">
+<article class="pub-row" data-kind="first preprint"><div class="pub-year">2026</div><div><a class="pub-title" href="https://arxiv.org/abs/2611.18162">2D and 3D unified RHD atmospheres and wind models of early B-supergiants including approximate NLTE effects</a><div class="pub-authors"><strong>D. Debnath</strong>, J. O. Sundqvist &amp; N. Moens</div><div class="pub-journal"><span class=pub-badge>Preprint</span>arXiv:2611.18162 · Preprint</div></div><a class="pub-link" href="https://arxiv.org/abs/2611.18162">arXiv ↗</a></article>
+<article class="pub-row" data-kind="collab preprint"><div class="pub-year">2026</div><div><a class="pub-title" href="https://arxiv.org/abs/2611.18254">Properties of near-surface turbulence in hot, massive stars: Statistical signatures from multi-dimensional models of O-type stars</a><div class="pub-authors">C. Van der Sijpt, F. A. Driessen, J. O. Sundqvist, N. Moens &amp; <strong>D. Debnath</strong></div><div class="pub-journal"><span class="pub-badge">Preprint</span>Submitted to Astronomy &amp; Astrophysics · arXiv:2611.18254</div></div><a class="pub-link" href="https://arxiv.org/abs/2611.18254">arXiv ↗</a></article>
+<article class="pub-row" data-kind="first"><div class="pub-year">2026</div><div><a class="pub-title" href="https://doi.org/10.1051/0004-6361/202660303">Two-dimensional, time-dependent approximate NLTE unified model atmospheres with winds for hot, massive stars</a><div class="pub-authors"><strong>D. Debnath</strong>, J. O. Sundqvist, N. Moens, L. G. Poniatowski, C. Van der Sijpt &amp; A. A. C. Sander</div><div class="pub-journal"><span class=pub-badge>First author</span>Astronomy &amp; Astrophysics 714, A418</div></div><a class="pub-link" href="https://doi.org/10.1051/0004-6361/202660303">DOI ↗</a></article>
+<article class="pub-row" data-kind="collab"><div class="pub-year">2026</div><div><a class="pub-title" href="https://doi.org/10.1051/0004-6361/202660010">Simulations of massive star atmospheres and winds during giant eruptive and quiescent luminous blue variable phases</a><div class="pub-authors">P. Schillemans, J. O. Sundqvist, <strong>D. Debnath</strong> et al.</div><div class="pub-journal">Astronomy &amp; Astrophysics 713, A127</div></div><a class="pub-link" href="https://doi.org/10.1051/0004-6361/202660010">DOI ↗</a></article>
+<article class="pub-row" data-kind="collab"><div class="pub-year">2026</div><div><a class="pub-title" href="https://doi.org/10.1051/0004-6361/202660102">Effects on v sin i determinations of O stars from 3D model atmospheres with high turbulent velocities</a><div class="pub-authors">L. Delbroek et al. (incl. <strong>D. Debnath</strong>)</div><div class="pub-journal">Astronomy &amp; Astrophysics 710, L11</div></div><a class="pub-link" href="https://doi.org/10.1051/0004-6361/202660102">DOI ↗</a></article>
+<article class="pub-row" data-kind="collab"><div class="pub-year">2026</div><div><a class="pub-title" href="https://doi.org/10.1051/0004-6361/202558274">X-shooting ULLYSES: Massive stars at low metallicity. XV. On the metallicity dependence of B-supergiant mass-loss rates</a><div class="pub-authors">O. Verhamme et al. (incl. <strong>D. Debnath</strong>)</div><div class="pub-journal">Astronomy &amp; Astrophysics 710, A166</div></div><a class="pub-link" href="https://doi.org/10.1051/0004-6361/202558274">DOI ↗</a></article>
+<article class="pub-row" data-kind="collab"><div class="pub-year">2025</div><div><a class="pub-title" href="https://doi.org/10.1051/0004-6361/202556825">2D unified atmosphere and wind simulations for a grid of O-type stars</a><div class="pub-authors">N. Moens, <strong>D. Debnath</strong> et al.</div><div class="pub-journal">Astronomy &amp; Astrophysics 704, A121</div></div><a class="pub-link" href="https://doi.org/10.1051/0004-6361/202556825">DOI ↗</a></article>
+<article class="pub-row" data-kind="collab"><div class="pub-year">2025</div><div><a class="pub-title" href="https://doi.org/10.1051/0004-6361/202556421">Spectral synthesis of 3D unified model atmospheres with winds for O stars</a><div class="pub-authors">L. Delbroek, J. O. Sundqvist, <strong>D. Debnath</strong> et al.</div><div class="pub-journal">Astronomy &amp; Astrophysics 704, A104</div></div><a class="pub-link" href="https://doi.org/10.1051/0004-6361/202556421">DOI ↗</a></article>
+<article class="pub-row" data-kind="collab"><div class="pub-year">2025</div><div><a class="pub-title" href="https://doi.org/10.1051/0004-6361/202554940">An on-the-fly line-driven wind iterative mass-loss estimator (LIME) for hot, massive stars of arbitrary chemical compositions</a><div class="pub-authors">J. O. Sundqvist, <strong>D. Debnath</strong> et al.</div><div class="pub-journal">Astronomy &amp; Astrophysics 703, A284</div></div><a class="pub-link" href="https://doi.org/10.1051/0004-6361/202554940">DOI ↗</a></article>
+<article class="pub-row" data-kind="collab"><div class="pub-year">2025</div><div><a class="pub-title" href="https://doi.org/10.1051/0004-6361/202554125">Improving 1D stellar atmosphere models with insights from multi-dimensional simulations. II. 1D versus 3D model comparison for Wolf-Rayet stars</a><div class="pub-authors">G. González-Torà et al. (incl. <strong>D. Debnath</strong>)</div><div class="pub-journal">Astronomy &amp; Astrophysics 699, A244</div></div><a class="pub-link" href="https://doi.org/10.1051/0004-6361/202554125">DOI ↗</a></article>
+<article class="pub-row" data-kind="collab"><div class="pub-year">2025</div><div><a class="pub-title" href="https://doi.org/10.1051/0004-6361/202452241">Improving 1D stellar atmosphere models with insights from multi-dimensional simulations: I. 1D versus 2D stratifications and spectral comparisons for O stars</a><div class="pub-authors">G. González-Torà et al. (incl. <strong>D. Debnath</strong>)</div><div class="pub-journal">Astronomy &amp; Astrophysics 694, A269</div></div><a class="pub-link" href="https://doi.org/10.1051/0004-6361/202452241">DOI ↗</a></article>
+<article class="pub-row" data-kind="collab"><div class="pub-year">2025</div><div><a class="pub-title" href="https://doi.org/10.1051/0004-6361/202452385">Structure formation in O-type stars and Wolf–Rayet stars</a><div class="pub-authors">C. Van der Sijpt, J. O. Sundqvist, <strong>D. Debnath</strong> et al.</div><div class="pub-journal">Astronomy &amp; Astrophysics 694, A54</div></div><a class="pub-link" href="https://doi.org/10.1051/0004-6361/202452385">DOI ↗</a></article>
+<article class="pub-row" data-kind="collab"><div class="pub-year">2025</div><div><a class="pub-title" href="https://doi.org/10.1051/0004-6361/202452375">Suppression of photospheric velocity fluctuations in strongly magnetic O stars in radiation-magnetohydrodynamic simulations</a><div class="pub-authors">A. ud-Doula et al. (incl. <strong>D. Debnath</strong>)</div><div class="pub-journal">Astronomy &amp; Astrophysics 693, A224</div></div><a class="pub-link" href="https://doi.org/10.1051/0004-6361/202452375">DOI ↗</a></article>
+<article class="pub-row" data-kind="first"><div class="pub-year">2024</div><div><a class="pub-title" href="https://doi.org/10.1051/0004-6361/202348206">2D unified atmosphere and wind simulations of O-type stars</a><div class="pub-authors"><strong>D. Debnath</strong>, J. O. Sundqvist, N. Moens, C. Van der Sijpt, O. Verhamme &amp; L. G. Poniatowski</div><div class="pub-journal"><span class=pub-badge>First author</span>Astronomy &amp; Astrophysics 684, A177</div></div><a class="pub-link" href="https://doi.org/10.1051/0004-6361/202348206">DOI ↗</a></article>
+</div><div class="text-links pub-more"><a href="https://orcid.org/0000-0002-9571-2590">ORCID ↗</a><a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Debnath%2C%20Dwaipayan%22">NASA ADS ↗</a><a href="https://www.kuleuven.be/wieiswie/en/person/00141604">KU Leuven publications ↗</a></div></div></section>
+<section id="tools" class="section"><div class="container"><div class="section-title"><div><div class="eyebrow">Methods &amp; software</div><h2>Models, tools, and data.</h2></div></div><div class="tools-grid"><article class="tool-card method-wide"><a class="zoom-link" href="assets/img/timeseries.png" data-zoom><img src="assets/img/timeseries-web.webp" alt="Time series of temperature, density, velocity, and Eddington factor in a 2D O-star atmosphere and wind model" loading="lazy" width="1600" height="1231"></a><div class="tool-copy"><div class="eyebrow">Radiation-hydrodynamics</div><h3>MPI-AMRVAC </h3><p>MPI-AMRVAC (Message Passing Interface - Adaptive Mesh Refinement - Versatile Advection Code) is an open-source, parallel computational framework for multidimensional (magneto)hydrodynamics. Its adaptive mesh refinement allows high spatial resolution in regions with strong gradients and shocks.</p><p>I use its radiation-hydrodynamics module with currently a flux-limited diffusion (FLD) approach to model the coupling between radiation and matter in hot, massive stars. Our 2D and 3D simulations, simultaneously model the deep, optically thick envelope, through the iron-opacity-bump and photosphere, into the supersonic, line-driven wind. These unified models allow us to study atmospheric structure formation, velocity fluctuations, and wind dynamics self-consistently.</p><a class="button outline" href="https://amrvac.org/">MPI-AMRVAC ↗</a><div class="text-links"><a href="https://doi.org/10.1051/0004-6361/202141023"> RHD module · Moens et al. (2022)↗</a></div></div></article>
+<article class="tool-card starfruit-card"><figure class="starfruit-figure" data-optional-figure><a class="zoom-link" href="assets/img/opacity_comparison.png" data-zoom><img src="assets/img/opacity_comparison.png" alt="Comparison of continuum and line opacities used in the development of STARFRUIT" loading="lazy"></a><div class="figure-placeholder" hidden><span>Opacity comparison</span><small>Figure to be added</small></div><figcaption>Frequency-dependent opacities</figcaption></figure><div class="tool-copy"><div class="eyebrow">Radiative transfer · Work in progress</div><h3>STARFRUIT</h3><p>I am building in collaboration a frequency-dependent radiative transfer method for multidimensional massive star atmospheres and winds, incorporating the full continuum opacity (including bound-free, free-free and electron scattering contributions) together with line blocking/blanketting, and taking line-scattering into account.</p><span class="development-label">Ongoing development</span></div></article>
+<article class="tool-card mforce-card" style="grid-column:1 / -1;"><figure class="mforce-figure"><a class="zoom-link" href="assets/img/nlte_compare.png" data-zoom><img src="assets/img/nlte_compare.png" alt="Flux-, Planck-, and energy-weighted mean opacities calculated with approximate NLTE" loading="lazy"></a><figcaption>Flux-, Planck-, and energy-weighted mean opacities with approximate NLTE</figcaption></figure><div class="tool-copy"><div class="eyebrow">Opacity calculations </div><h3>MFORCE</h3><p>MFORCE calculates line opacity multipliers and mean opacities for hot, massive star atmospheres and winds from a database of millions of spectral lines. The original method computes flux-weighted line opacities and line-force parameters in accelerating media. Recent extensions incorporate approximate NLTE effects and line scattering to calculate separate flux-, energy- and Planck-weighted opacities for radiative momentum and thermal coupling for radiation-hydrodynamical simulations.</p><div class="text-links"><a href="https://doi.org/10.1051/0004-6361/202142888">Poniatowski et al. (2022) ↗</a><a href="https://doi.org/10.1051/0004-6361/202660303">Debnath et al. (2026) ↗</a></div></div></article>
+<article class="tool-card method-wide"><a class="zoom-link" href="assets/img/lime_comparison.png" data-zoom><img src="assets/img/lime_comparison.png" alt="Comparison of predicted-to-empirical mass-loss rates for OB stars using LIME and three alternative prescriptions" loading="lazy" width="675" height="535"></a><div class="tool-copy"><div class="eyebrow">Mass-loss estimator</div><h3>LIME</h3><p>Line-driven wind Iterative Mass-loss Estimator - a fast, physics-based tool for predicting the mass-loss rates of hot, massive stars with arbitrary chemical abundances.</p><a class="button outline" href="https://lime.ster.kuleuven.be/">Open LIME ↗</a></div></article></div></div></section>
+<section class="section" id="beyond"><div class="container"><div class="section-title"><div><div class="eyebrow">Beyond the simulations</div><h2>A little more about me.</h2></div></div><div class="personal-grid"><article class="small-card"><h3>Talks &amp; outreach</h3><p>In October 2023, I presented our unified atmosphere and wind models of O stars in the Institute of Astronomy seminar series.</p><a href="https://www.youtube.com/watch?v=_sN6rrLdsqg">Watch the seminar ↗</a></article><article class="small-card green"><div><h3>Inside the greenhouse</h3><p>Outside of astrophysics, I enjoy cultivating tropical plants.</p><a href="plants.html">Visit my plant collection ↗</a></div><img src="assets/img/plants/thai_constellation.jpg" alt="Variegated Monstera leaf" loading="lazy"></article></div></div></section>
+</main>
+<footer class="footer" id="contact"><div class="container"><div class="footer-grid"><div><h2>Let's connect.</h2><p>Institute of Astronomy · KU Leuven, Belgium</p><p><a href="mailto:dwaipayan.debnath@kuleuven.be">dwaipayan.debnath@kuleuven.be</a></p></div><div class="footer-links"><a href="https://orcid.org/0000-0002-9571-2590">ORCID ↗</a><a href="https://be.linkedin.com/in/dwaipayan-debnath-a316929b">LinkedIn ↗</a><a href="cv.pdf">CV (PDF) ↗</a><a href="plants.html">Plants ↗</a></div></div><div class="footer-bottom"><span>© 2026 Dwaipayan Debnath</span><span>Last updated 22 November 2026 · Hosted on GitHub Pages</span></div></div></footer>
+<dialog class="dialog" id="image-dialog" aria-label="Enlarged scientific figure"><button type="button" aria-label="Close enlarged image">×</button><img alt=""></dialog>
 
-   body{
-     font-family:var(--sans);
-     font-size:1.125rem;          /* ≈18 px base for comfortable reading */
-     line-height:1.75;            /* generous leading */
-     color:var(--text);
-     background:var(--bg);
-     -webkit-font-smoothing:antialiased;
-   }
-
-   p{margin-bottom:1.25rem;}
-   ul{list-style:disc;margin-left:1.4rem;margin-bottom:1.25rem;}
-   li{margin-bottom:.5rem;}
-
-   h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.2;color:var(--accent);}   
-
-   /* navigation */
-   header{position:sticky;top:0;z-index:999;background:rgba(253,253,253,.9);backdrop-filter:blur(6px);border-bottom:1px solid #e0e0e0;}
-   nav{max-width:960px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;padding:.9rem 1rem;}
-   nav a{margin-left:1.4rem;font-weight:600;color:var(--cta);text-decoration:none;}
-   nav a.active{color:var(--accent);}  
-   @media(max-width:640px){nav a{margin-left:.9rem;font-size:.95rem;}}
-
-   /* hero */
-   .hero{max-width:960px;margin:0 auto 2.75rem;padding:5rem 1rem 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.25rem;position:relative;isolation:isolate;}
-   .hero::before{content:'';position:absolute;inset:0;z-index:-1;background:url("./assets/img/Pleiades_large.jpg") center/cover no-repeat;background-blend-mode:overlay;background-color:rgba(31,78,121,.4);filter:blur(1px);transform:scale(1.05);}  
-   .headshot{width:170px;height:170px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.15);}  
-   .hero h1{font-size:clamp(2.4rem,5vw,3.4rem);color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.25);}  
-   .hero p{font-size:1.125rem;color:#e6e6e6;text-shadow:0 1px 3px rgba(0,0,0,.25);}  
-   .cta{margin-top:1.6rem;}
-   .cta a{display:inline-block;text-decoration:none;padding:.65rem 1.5rem;border-radius:4px;background:var(--ctb);color:#fff;font-weight:600;transition:background .25s ease;}
-   .cta a:hover{background:#424a4d;}
-
-   /* tab sections */
-   section.tab-section{display:none;max-width:960px;margin:3rem auto;padding:0 1rem;}
-   section.tab-section.active{display:block;}
-   section h2{font-size:1.7rem;margin-bottom:1rem;}  
-
-   /* image grid */
-   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;}
-   .tile{background:#fff;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);cursor:zoom-in;transition:transform .35s ease,box-shadow .35s ease;}
-   .tile:hover{transform:translateY(-2px);box-shadow:0 3px 8px rgba(0,0,0,.08);} 
-   .tile div{padding:.9rem 1rem;font-size:.9rem;}
-   .tile strong{display:block;margin-bottom:.35rem;font-weight:600;}
-
-  .tile:hover img{
-    transform:none;     /* reset */
-  }
-  
-  /* re-apply the effect, but only when the cursor is on the image */
-  .tile img:hover{
-    transform:scale(1.12);
-  }
-
-   /* lightbox */
-   #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;z-index:1000;}
-   #lightbox[hidden]{display:none;}
-   #lightbox img{max-width:90vw;max-height:90vh;box-shadow:0 4px 20px rgba(0,0,0,.5);} 
-   #lb-close{position:absolute;top:1rem;right:1.2rem;font:700 2rem/1 sans-serif;color:#fff;cursor:pointer;user-select:none;}
-
-   /* footer */
-   footer{text-align:center;padding:2.2rem 1rem;font-size:.95rem;color:#555;border-top:1px solid #e0e0e0;}
-
-   #highlights .grid{
-     grid-template-columns:1fr;   /* single column → stacked rows   */
-     width:100%;                  /* let it occupy the whole track  */
-     margin:0;                    /* centre gap no longer needed    */
-     gap:1.75rem;                 /* a little breathing room        */
-   }
-   
-    /* neutral cursor for the whole card */
-    #highlights .tile{
-      cursor:default;          /* or simply omit the property */
-    }
-    
-    /* keep the zoom-in cursor on the picture */
-    #highlights .tile img{
-      cursor:zoom-in;
-    }   
-    /* —— “Book-style” highlight cards —— */
-    #highlights .tile{
-      display:block;              /* simple block again              */
-      padding:1rem 1.25rem;
-    }
-
-    #highlights .tile img{
-      float:right;
-      /*      ↓ bigger but still responsive                 */
-      width:clamp(300px, 55%, 420px);
-      /*         ^ min-width   ^ ideal %   ^ don’t exceed   */
-      height:auto;
-      margin:0 1.25rem 1rem 0;
-      border-radius:4px;
-      object-fit:cover;
-    }
-        
-    /* clear the float at the end of each tile so the next card starts below */
-    #highlights .tile::after{
-      content:"";
-      display:block;
-      clear:both;
-    }
-    
-    /* revert to stacked layout on small screens */
-    @media (max-width:640px){
-      #highlights .tile img{
-        float:none;
-        width:100%;
-        margin:0 0 .8rem;
-      }
-    }
- 
-   #highlights .tile div{
-     font-size:clamp(1.25rem,0.8vw + 1.1rem,1.55rem); /* 18.9 → 22 px range            */
-     line-height:1.6;
-   }
-   
-   #highlights .tile strong{
-     display:block;
-     margin-bottom:.4rem;
-     font-size:1.15em;            /* a touch bigger than the paragraph text   */
-     line-height:1.35;
-   }
-   
-    #highlights .tile a{
-      color:var(--accent);          /* same blue as headings         */
-      font-weight:600;
-      text-decoration:none;         /* no underline                  */
-      display:inline-flex;          /* lets us animate the arrow     */
-      align-items:center;
-      gap:.25rem;                   /* space between text & arrow    */
-      transition:color .25s ease;
-      cursor:pointer;               /* classic pointer on hover      */
-    }
-    
-    /* subtle arrow wiggle on hover */
-    #highlights .tile a span{
-      transition:transform .25s ease;
-    }
-    
-    #highlights .tile a:hover{
-      color:#000;                   /* darken text on hover          */
-    }
-    
-    #highlights .tile a:hover span{
-      transform:translateX(3px);    /* nudge arrow right             */
-    }
-
-    /* footer contact icons */
-    footer .social{
-      display:flex;
-      justify-content:center;
-      gap:1.25rem;
-      margin-bottom:1rem;
-    }
-    
-    footer .social a{
-      display:inline-flex;
-      align-items:center;
-      opacity:.8;
-      transition:opacity .25s ease;
-      color:inherit;       /* inherits --text */
-    }
-    
-    footer .social a:hover{opacity:1;}
-    
-    footer .social svg{
-      width:26px;
-      height:26px;
-      fill:currentColor;
-    }
-    
-    /* screen-reader helper */
-    .sr-only{
-      position:absolute;
-      clip:rect(0 0 0 0);
-      clip-path:inset(50%);
-      width:1px;
-      height:1px;
-      overflow:hidden;
-      white-space:nowrap;
-      border:0;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <div><strong>DD</strong></div>
-      <div>
-        <a href="#about" data-tab="about" class="active">About</a>
-        <a href="#research" data-tab="research">Research</a>
-        <a href="#highlights" data-tab="highlights">Highlights</a>
-        <a href="#publications" data-tab="publications">Publications</a>
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <img src="./assets/img/personal_img.png" alt="Portrait of astrophysicist Dwaipayan Debnath" class="headshot" />
-    <div>
-      <h1>Dwaipayan Debnath</h1>
-      <p>PhD Candidate · Institute of Astronomy, KU Leuven</p>
-      <div class="cta"><a href="./cv.pdf">Download CV (PDF)</a></div>
-    </div>
-  </section>
-
-  <!-- Hidden but crawlable alternate names -->
-  <p class="sr-only">Alternate names: D. Debnath, D Debnath, Debnath D., Debnath Dwaipayan</p>
-
-  <section id="about" class="tab-section active">
-    <h2>About</h2>
-    <p>I am a PhD student in the <a href="https://fys.kuleuven.be/ster/research-projects/equation-folder/equation-home" target="_blank">EQUATION group</a> of Prof.&nbsp;Jon&nbsp;Sundqvist at the Institute of Astronomy (KU&nbsp;Leuven). My work combines cutting‑edge 2D/3D radiation‑hydrodynamic simulations using MPI-AMRVAC in a unified approach, starting deep within the sub‑sonic regions and extending all the way upto the line‑driven wind region in hot and luminous, massive stars.</p>
-    <p>Our new unified atmosphere‑and‑wind models are the first to self‑consistently bridge the photosphere and supersonic outflow. They reveal that:</p>
-    <ul>
-      <li> Structure starts appearing deep within the sub‑sonic regions, originating from the iron‑opacity bump.</li>
-      <li> The atmosphere becomes highly turbulent; spectra computed from our RHD models can reproduce the extra broadening observed in photospheric lines of O‑type stars, making turbulence a natural explanation for the ad‑hoc “macro‑turbulence” used in 1‑D synthesis codes.</li>
-      <li> Turbulent pressure inflates the pressure‑scale height around the photosphere, altering inferred log g values and helping solve the long‑standing mass‑discrepancy problem.</li>
-    </ul>
-    <p>I also co‑develop <a href="https://lime.ster.kuleuven.be/" target="_blank" rel="noopener">LIME</a> — an on‑the‑fly mass‑loss estimator that couples modified CAK theory with line‑statistics parameters to predict mass‑loss rates for stars of arbitrary chemical composition.</p>
-    <p> When I’m not simulating stellar winds, I cultivate an ever-expanding collection of tropical plants—see the full greenhouse on the <a href="./plants.html">plants page</a>.</p>  
-  </section>
-
-  <section id="research" class="tab-section">
-    <h2>Research</h2>
-    <ul>
-      <li>Massive‑star atmospheres &amp; winds</li>
-      <li>Radiative transfer &amp; multi‑D RHD</li>
-      <li>Stellar evolution &amp; feedback</li>
-      <li>Computational astrophysics</li>
-    </ul>
-    <h3 style="margin-top:2rem;">Current Projects</h3>
-    <ul>
-      <li> At present I am developing new 2D/3D Unified Atmosphere &amp; Wind models for OB-stars incorporating an approximate NLTE formalism for calculating the line opacities. With our new formalism we can now seperate the Energy-, Plank- and Flux- mean opacity. Previously the Energy- and Plank- mean were taken equal to the Flux-mean essentially forcing instantanous heating and cooling thereby radiative equilibrium. With our new formalism we except the gas and the radiation temperature to decouple and essentially give rise to a double-temperature sturcture in the outflowing regions.</li>
-    </ul>
-  </section>
-
-  <section id="highlights" class="tab-section">
-    <h2>Simulation Highlights</h2>
-    <div class="grid">
-      <div class="tile">
-        <img src="./assets/img/timeseries.png" alt="Multi-D Atmosphere and Wind Dynamics" />
-        <div><strong>Multi-D Atmosphere and Wind Dynamics</strong> 
-        <p>The figure shows the temporal evolution of our 
-        prototypical 'O4' simulation (2D) during the dynamically
-        relaxed phase. It shows how the Γ < 1 sub-Eddington
-        layers close to the lower boundary have become quasi-stable,
-        characterized by low variation in temperature and velocity; the
-        radial velocity dispersion is here about ∼ 1 km/s
-        and the temperature dispersion is ∼ 1.5%. As the temperature
-        then decreases outwards from about 450 kK at the lower boundary, 
-        the opacity increases and creates local super-Eddington regions 
-        (below the photosphere) with Γ > 1. </p>
-        
-        The net result is a highly structured and turbulent sub-surface atmosphere characterized by 
-        temperature fluctuations, strong density contrasts, and large turbulent 
-        velocities that 'overshoot' into the overlying cooler surface layers 
-        with lower opacities. The turbulent gas stemming from the deeper
-        atmosphere naturally interacts with the line-driven layers around
-        and above the photosphere. This complex interplay creates a situation 
-        wherein the line-driven wind acts like a suction mechanism, 
-        preventing some gas parcels that otherwise would have
-        turned over from falling back into the deeper stellar envelope. Simultaneously, 
-        the turbulence arising from the deeper atmosphere
-        introduces a natural variation in flux and line-opacity in the wind
-        launching region.</div>
-      </div>
-      <div class="tile">
-        <img src="./assets/img/Ostar_surface.gif" alt="Surface gif" />
-        <div><strong>Variable surface</strong>
-        A lateral slice through our relaxed 3-D ‘O4’ simulation, taken near the optical photosphere (τ ≈ 2⁄3), 
-        reveals radiative-temperature fluctuations of roughly 20 000 K. If we could resolve an O-star’s surface, 
-        it would likely look very much like this — dynamic, and richly structured.
-        </div>
-      </div>
-      <div class="tile">
-        <img src="./assets/img/lime_comparison.png" alt="LIME vs other prescriptions" />
-        <div>
-          <strong>Line-driven-wind Iterative Mass-loss rate Estimator (LIME)</strong>
-
-          <p>Figure compares LIME predictions to mass-loss rates derived from observations of 84 OB-stars in the Milky way, LMC, and SMC. 
-          These empirical rates are derived in a homogeneous way: optical and ultraviolet observations of a multitude of strategic spectral lines are
-          fitted to synthetic spectra calculated by means of the model atmosphere and wind code fastwind (Puls et al. 2005; Sundqvist & Puls 2018), accounting for effects of wind clumping with arbitrary optical thickness, a non-void medium in between clumps,
-          and for porosity effects in velocity space. Observational data come from the ulysses and XshootU projects (Vink et al. 2023) and a genetic algorithm approach is used for each star to find a
-          global best fit to the data (Brands et al. 2022).</p>
-
-          <p>It shows an overall good agreement between our predicted rates and those empirically inferred from observations. When making 
-          the same comparisons also to the alternative mass-loss rate recipes from Vink et al. (2001); Björklund et al. (2023); Krtička et al. (2024), 
-          as displayed, the simple method presented here performs as good or even better.</p>
-
-          <a href="https://lime.ster.kuleuven.be/" target="_blank" rel="noopener">Visit LIME website</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="publications" class="tab-section">
-    <h2>Publications</h2>
-    <h3>Peer‑Reviewed Articles</h3>
-    <ul>
-      <li><strong>Debnath D.</strong>, Sundqvist J.O., Moens N. <em>et al.</em> 2024. <em>2D unified atmosphere and wind simulations of O‑type stars</em>. <em>A&amp;A</em> 684.</li>
-      <li>Ud‑Doula A., Sundqvist J.O., Narechania N., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>Suppression of photospheric velocity fluctuations in strongly magnetic O stars in radiation‑magnetohydrodynamic simulations</em>. <em>A&amp;A</em>.</li>
-      <li>Van der Sijpt C., Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>Structure formation in O‑type stars and Wolf‑Rayet stars</em>. <em>A&amp;A</em>.</li>
-      <li>González‑Torà G., Sander A.A.C., Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>Improving 1D stellar atmosphere models with insights from multi‑dimensional simulations: I. 1D versus 2D stratifications and spectral comparisons for O stars</em>. <em>A&amp;A</em>.</li>
-      <li>Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>An on‑the‑fly line‑driven‑wind iterative mass‑loss estimator (LIME) for hot, massive stars of arbitrary chemical compositions</em>. <em>A&amp;A</em>.</li>
-      <li>González‑Torà G., Sander A.A.C., Moens N., Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025. <em>Improving 1D stellar atmosphere models with insights from multi‑dimensional simulations II. 1D versus 3D hydrodynamically consistent model comparison for WR stars</em>. <em>A&amp;A</em>.</li>
-      <li>Moens N., <strong>Debnath D.</strong> <em>et al.</em> 2025.</em> <em>Atmospheric parameters from a grid of 2D O‑star simulations</em>. <em>A&amp;A</em>.</li>
-      <li>Delbroek L., Sundqvist J.O., <strong>Debnath D.</strong> <em>et al.</em> 2025.</em> <em>Spectral synthesis of 3D unified model atmospheres with winds for O‑stars</em>. <em>A&amp;A</em>.</li>
-    </ul>
-    <h3>Manuscripts in Prep / Submitted</h3>
-    <ul>
-      <li><strong>Debnath D.</strong>, Sundqvist J.O., Moens N. <em>Multi‑D NLTE unified model atmospheres with winds</em>. In prep.</li>
-    </ul>
-  </section>
-
-  <footer>
-  <!-- social icons -->
-  <div class="social">
-    <a href="mailto:dwaipayan.debnath@kuleuven.be">
-      <!-- e-mail envelope – Heroicons outline -->
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 19.5h-15A2.25 2.25 0 0 1 2.25 17.25V6.75Zm0 0 9.75 6.75L22.5 6.75" /></svg>
-      <span class="sr-only">Email</span>
-    </a>
-
-    <a href="https://be.linkedin.com/in/dwaipayan-debnath-a316929b" target="_blank" rel="noopener">
-      <!-- LinkedIn logo -->
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 8.75h3.96v11.7H3V8.75Zm6.34 0h3.8v1.6h.05c.53-.93 1.83-1.9 3.76-1.9 4.03 0 4.77 2.65 4.77 6.09v6.01h-3.96v-5.34c0-1.28-.02-2.93-1.79-2.93-1.8 0-2.07 1.4-2.07 2.84v5.43H9.34V8.75Z"/></svg>
-      <span class="sr-only">LinkedIn</span>
-    </a>
-
-    <a href="https://orcid.org/0000-0002-9571-2590" target="_blank" rel="noopener">
-      <!-- ORCID icon -->
-      <svg viewBox="0 0 256 256" aria-hidden="true"><path d="M128 0a128 128 0 1 0 0 256 128 128 0 0 0 0-256Zm-9.3 53.9h18.4v148.2h-18.3V53.9Zm-51.2 0h45.6v18.3H85.7v129.8H67.6V72.2H40.2V53.9h27.6Zm118.5 50.8a39 39 0 0 1 12.2 28.5 39.2 39.2 0 0 1-39.2 39.3h-22.3v30.8h-18.2V53.9h40.5c21.6 0 39 17.5 39 39.1Zm-18.4 0c0-11.5-9.3-20.8-20.8-20.8h-21.7v41.6h21.7c11.4 0 20.8-9.4 20.8-20.8Z"/></svg>
-      <span class="sr-only">ORCID</span>
-    </a>
-  </div>
-
-  © 2025 Dwaipayan Debnath · Built with GPT O3 & GitHub Pages · Last updated: 10 Feb 2026
-</footer>
-
-
-  <!-- ——— Lightbox ——— -->
-  <div id="lightbox" hidden>
-    <span id="lb-close">&times;</span>
-    <img id="lb-img" alt="">
-  </div>
-
-  <script>
-    // ——— Tab navigation ———
-    const links=document.querySelectorAll('nav a[data-tab]');
-    const sections=document.querySelectorAll('section.tab-section');
-    function activate(tab){
-      sections.forEach(s=>s.classList.toggle('active',s.id===tab));
-      links.forEach(l=>l.classList.toggle('active',l.dataset.tab===tab));
-    }
-    links.forEach(link=>{
-      link.addEventListener('click',e=>{e.preventDefault();activate(link.dataset.tab);history.replaceState(null,'','#'+link.dataset.tab);});
-    });
-    window.addEventListener('hashchange',()=>{
-      const tab=location.hash.slice(1)||'about';
-      activate(tab);
-    });
-    // initial load handling
-    const initial=location.hash.slice(1)||'about';
-    if(initial!=='about'){activate(initial);}  
-
-    // ——— Lightbox ———
-    const lb=document.getElementById('lightbox');
-    const lbImg=document.getElementById('lb-img');
-    const closeLb=()=>{lb.hidden=true;lbImg.src='';};
-    document.querySelectorAll('.tile img').forEach(img=>{
-      img.addEventListener('click',()=>{
-        lbImg.src=img.src; // change to high‑res URL if available
-        lb.hidden=false;
-      });
-    });
-    document.getElementById('lb-close').addEventListener('click',closeLb);
-    lb.addEventListener('click',e=>{if(e.target.id==='lightbox')closeLb();});
-  </script>
-</body>
-</html>
+</body></html>

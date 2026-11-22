@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://ddebnathkul.github.io/sitemap.xml
