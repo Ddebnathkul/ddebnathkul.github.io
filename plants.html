@@ -56,12 +56,41 @@
 .greenhouse-intro-card .supplier-note{margin-top:16px;padding-top:13px;border-top:1px solid var(--line);font-size:.85rem;line-height:1.65;color:var(--muted)}
 .supplier-note strong{color:var(--ink)}
 @media(max-width:720px){.greenhouse-care-photo img{height:220px}}
+
+/* Keep the favourites section inside the viewport, including on small phones. */
+.greenhouse-collection,.collection-heading,.collection-heading>div,.plant-tabs,.plant-profiles,.plant-profile{min-width:0;max-width:100%}
+.plant-tabs,.plant-profiles,.plant-profile{width:100%;box-sizing:border-box}
+.plant-tabs button,.plant-facts dt,.plant-facts dd,.plant-climate>div,.plant-references a{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.plant-climate{grid-template-columns:repeat(2,minmax(0,1fr))}
+.greenhouse-love figure img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain}
+@media(max-width:720px){
+  .collection-heading{display:block;width:100%}
+  .collection-heading p{white-space:normal}
+  .greenhouse-collection.tabs-ready .plant-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:8px}
+  .plant-tabs button{width:100%;white-space:normal;text-align:center;padding:9px 6px;font-size:.8rem;line-height:1.3;min-height:44px}
+  .plant-profile{grid-template-columns:minmax(0,1fr)}
+  .plant-information{padding:20px 16px}
+  .plant-information h2{font-size:clamp(1.45rem,5.5vw,1.85rem)}
+  .plant-facts>div{grid-template-columns:minmax(0,86px) minmax(0,1fr);gap:9px}
+  .plant-climate>div{padding:10px 8px}
+  .plant-climate dt{overflow-wrap:anywhere}
+  .plant-photo{width:100%;max-width:100%;box-sizing:border-box;padding:12px}
+  .plant-photo .zoom-link{max-width:100%}
+  .plant-photo img{display:block;width:100%;max-width:100%;height:auto;max-height:min(520px,72vh);object-fit:contain}
+  .plant-references a{white-space:normal}
+  .greenhouse-love figure img{height:auto;max-height:440px}
+}
+@media(max-width:380px){
+  .plant-information{padding:18px 13px}
+  .plant-facts>div{grid-template-columns:minmax(0,1fr);gap:3px}
+  .plant-climate dt{font-size:.65rem;letter-spacing:.04em}
+}
 </style>
 </head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><nav class="container nav" aria-label="Main navigation"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">DD</span>Dwaipayan Debnath</a><a class="button outline" href="index.html">← Home</a></nav></header><main class="container" id="main"><div class="page-heading"><div class="eyebrow">Beyond astrophysics</div><h1>Inside the greenhouse.</h1><p>From velvety Anthuriums to variegated Monsteras, these are a few favourites I care for when I’m not modelling massive stars. Find more plant content on <a href="https://www.instagram.com/theplanthoppers/">@theplanthoppers</a>.</p><nav class="greenhouse-jump" aria-label="Greenhouse page sections"><a href="#aroids">My love for aroids ↓</a><a href="#soil-mix">Soil mix ↓</a><a href="#moss-poles">Moss poles ↓</a><a href="#plant-genera">What I grow ↓</a><a href="#favourites">My favourites ↓</a></nav></div>
 <section class="greenhouse-intro" aria-label="About my greenhouse">
   <article id="aroids" class="greenhouse-love">
     <div><div class="eyebrow">My passion for tropical plants</div><h2>Aroids and beyond.</h2><p>Growing up in a tropical country, this is a part of my home that I still can bring to my present living space. What I particularly love about aroids is the remarkable diversity of their foliage. Sometimes you see a new leaf pop up, and I think to myself how could nature devise something of such aweness and beauty. They can range from the velvety, deeply veined leaves of Anthuriums and Philodendrons to the fenestrated leaves of Monsteras, and the big string leaves of Alocasias (literally grows as weed in my home-town).</p><p>I enjoy watching plants develop from their juvenile to mature growth forms, and it gives me a sense of calmness and teaches me the fruits of passion, perseverance and patience. As a fellow science nerd I also geek about their natural habitats and growing conditions. My collection extends beyond aroids to begonias, tropical yams and other unusual foliage plants.</p></div>
-    <figure><a class="zoom-link" data-zoom href="assets/img/plants/thai_constellation.jpg"><img src="assets/img/plants/thai_constellation.jpg" alt="Variegated Monstera Thai Constellation in my plant collection" loading="lazy"></a><figcaption>Monstera deliciosa ‘Thai Constellation’ · From my collection</figcaption></figure>
+    <figure><a class="zoom-link" data-zoom href="assets/img/plants/me_plants.png"><img src="assets/img/plants/me_plants.png" alt="Me in a greenhouse" loading="lazy"></a><figcaption>Me in a greenhouse</figcaption></figure>
   </article>
   <div class="greenhouse-care-grid">
     <article class="greenhouse-intro-card" id="soil-mix"><div class="eyebrow">Growing medium</div><h2>My soil mix.</h2><p>For most of my aroids, I prefer a chunky, well-aerated mix that retains some moisture while allowing air to reach the roots. I adjust the components according to the plant and how quickly the pot dries out.</p><figure class="greenhouse-care-photo"><a class="zoom-link" data-zoom href="assets/img/plants/soil.jpeg"><img src="assets/img/plants/soil.jpeg" alt="My chunky aroid growing mix" loading="lazy"></a><figcaption>My aroid soil mix · Click to enlarge</figcaption></figure><ul><li><strong>Bark</strong><span>Creates air pockets and gives the mix structure.</span></li><li><strong>Perlite</strong><span>Improves aeration and drainage.</span></li><li><strong>Coco coir</strong><span>Retains moisture without excessive compaction.</span></li><li><strong>Charcoal</strong><span>Improves drainage, and controls odors.</span></li><li><strong>LECA</strong><span>Expanded clay pebbles that provide a porous, inorganic growing medium.</span></li><li><strong>Pumice</strong><span>A porous mineral component that improves aeration and drainage.</span></li></ul><p class="mix-note"><strong>Alternatives:</strong> For moisture-loving begonias, I add vermiculite. For Alocasias, a semi-hydroponic mineral mix with pumice and zeolite is another option I favour.</p><p class="supplier-note"><strong>Where I buy my supplies:</strong> I get my coco coir, perlite, LECA and pumice from AVEVE, and my charcoal from Sybotanica.</p></article>
@@ -70,7 +99,7 @@
   <article class="greenhouse-intro-card" id="plant-genera"><div class="eyebrow">Plant diversity</div><h2>What I grow.</h2><p>My collection includes both naturally occurring species and horticultural hybrids and variegated cultivars, across several botanical families.</p><div class="genus-groups"><div class="genus-group"><h3>Aroids · Araceae</h3><p>Climbers, terrestrial foliage plants and epiphytes.</p><div class="genus-chips"><span>Monstera</span><span>Rhaphidophora</span><span>Alocasia</span><span>Anthurium</span><span>Philodendron</span><span>Aglaonema</span><span>Epipremnum</span><span>Syngonium</span><span>Scindapsus</span></div></div><div class="genus-group"><h3>Beyond aroids</h3><p>More tropical genera with fascinating foliage and growth habits.</p><div class="genus-chips"><span>Begonia</span><span>Dioscorea</span><span>Peperomia</span><span>Hoya</span><span>Rhipsalis</span></div><p style="margin:14px 0 8px"><strong>Carnivorous plants</strong></p><div class="genus-chips"><span>Pinguicula</span><span>Nepenthes</span></div></div></div><p style="margin-top:16px">These are just some of the plants I grow, alongside many others.</p></article>
 </section>
 <section id="favourites" class="greenhouse-collection" aria-label="Tropical plant collection">
-<div class="collection-heading"><div><div class="eyebrow">From my collection</div><h2>Some of my favourites.</h2><p class="favourites-intro">Select a plant to explore its botanical background, growing conditions and a photograph from my collection.</p>
+<div class="collection-heading"><div><div class="eyebrow">From my collection</div><h2>Some of my favourites.</h2><p class="favourites-intro">Select a plant to explore its botanical background, growing conditions and a photograph from my collection.</p></div></div>
 <div class="plant-tabs" role="tablist" aria-label="Choose a plant">
 <button id="tab-thai-constellation" type="button" role="tab" aria-controls="plant-thai-constellation" aria-selected="true" tabindex="0">Thai Constellation</button>
 <button id="tab-splendid" type="button" role="tab" aria-controls="plant-splendid" aria-selected="false" tabindex="-1">Philodendron Splendid</button>
